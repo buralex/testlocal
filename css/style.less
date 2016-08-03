@@ -1,0 +1,132 @@
+/* ----------------------------------------------------------------------------- 
+ 
+  FONTS
+ 
+----------------------------------------------------------------------------- */
+@font-face {
+	font-family: "nevis Bold";
+	src: url("../fonts/nevis_bold/nevis_bold.eot");
+	src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* -----------------------------------------------------------------------------
+
+  MAIN SCREEN 
+
+----------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------------------------
+
+  ALERT WINDOWS 
+
+----------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------------------------
+
+  ADAPTIVE 
+
+----------------------------------------------------------------------------- */
+
+
+@media(min-width:0px) and (max-width:320px) {
+	
+}
+
+@media(min-width:321px) and (max-width:480px) {
+	
+}
+
+@media(min-width:481px) and (max-width:768px) {
+}
+
+@media(min-width:769px) and (max-width:992px) {
+}	
+ 
+
+@media(min-width:993px) and (max-width:1200px) {
+	
+}
+
+/* -----------------------------------------------------------------------------
+
+  BOX SIZING RESET
+  
+----------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------
+
+  Clearfix 
+
+----------------------------------------------------------------------------- */
+
+.clearfix {
+  &::before, &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/* -----------------------------------------------------------------------------
+
+  ROOT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+body {
+
+  
+  background: url(../img/logo.png) 0px 81px no-repeat,
+              url(../img/bgPat1.png) repeat-x,
+              url(../img/bgPat.png), #333949 ;
+  
+                       
+}
+
+div {
+  outline: 1px solid green;
+}
+
+.main-header {
+  &-left {
+    background-color: gold;
+  }
+  &-center {
+    background-color: blue;
+  }
+  &-right {
+    background-color: red;
+  }
+}
+
+h1 {
+  color: white;
+  font-family: 'nevis Bold';
+  text-shadow: 1px 1px black;
+}
+
+p {
+  margin: 100px;
+  font: 50px "nevis Bold", serif;
+  color: white;
+  text-align:center; 
+}
+
+/* -----------------------------------------------------------------------------
+
+  HEADING ELEMENTS
+  
+----------------------------------------------------------------------------- */
