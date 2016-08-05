@@ -1,0 +1,193 @@
+/* ----------------------------------------------------------------------------- 
+ 
+  FONTS
+ 
+----------------------------------------------------------------------------- */
+@font-face {
+	font-family: "nevis Bold";
+	src: url("../fonts/nevis_bold/nevis_bold.eot");
+	src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* -----------------------------------------------------------------------------
+
+  MAIN SCREEN 
+
+----------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------------------------
+
+  ALERT WINDOWS 
+
+----------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------------------------
+
+  ADAPTIVE 
+
+----------------------------------------------------------------------------- */
+
+
+@media screen and (min-width:0px) and (max-width:320px) {
+	
+}
+
+@media screen and (min-width:321px) and (max-width:480px) {
+  .row-top {
+    height: 10rem;
+    color: red;
+  }
+  
+  .container {
+    color: white;
+    height: 2rem;
+  }
+	
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+}	
+ 
+
+@media screen and (min-width:993px) and (max-width:1200px) {
+	
+}
+
+/* -----------------------------------------------------------------------------
+
+  BOX SIZING RESET
+  
+----------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------
+
+  Clearfix 
+
+----------------------------------------------------------------------------- */
+
+.clearfix {
+  &::before, &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+
+                VARIABLES
+  
+----------------------------------------------------------------------------- */
+
+$font-small: 1.1rem 'Verdana Regular', sans-serif;
+$font-small__color: #6a87a3;
+$container-width: 86.364%;
+
+/* -----------------------------------------------------------------------------
+
+              ROOT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+html, body, #wrap {         // STICKY FOOTER
+  height: 100%;
+}
+
+#wrap {
+  display:table;            // STICKY FOOTER
+  width: 100%;
+}
+.footer { display: table-row }     
+.footer {height: 1px}         // STICKY FOOTER
+
+body {
+  //background: linear-gradient(to bottom, red, green);
+  background: url(../img/bgPat1.png) repeat-x,
+              url(../img/bgPat.png) ;
+             
+}
+
+.container {
+   outline: 1px solid green;
+   max-width: $container-width;
+   margin: 0 auto;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                  MAIN-HEADER
+  
+----------------------------------------------------------------------------- */
+
+.main-header {
+   outline: 1px solid red;
+  
+  //top: 0;
+  //left: 0;
+  width: 100vw;
+  max-height: 5.2rem;
+  line-height: 5.2rem;
+  background:  linear-gradient(to top, #0f0f0f , #373a3e);
+}
+
+.main-header{
+    &__subscription {
+        outline: 1px solid red;
+        display: inline-block;
+       
+        font: $font-small;
+        color: $font-small__color;
+        & span {
+          color: #485766;
+        }
+        & a {
+          text-decoration: none;
+          color: $font-small__color;
+        }
+    }
+    
+}
+
+
+/* -----------------------------------------------------------------------------
+
+  HEADING ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------------------------
+
+             FOOTER        (styles for sticky footer  are in "root elements")
+  
+----------------------------------------------------------------------------- */
+.footer {
+  
+  max-height: 6rem;
+  background-color: #040507;
+  color: $font-small__color;
+  & p {
+    padding-left: (100 - $container-width)/2;
+  }
+}

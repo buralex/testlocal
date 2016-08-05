@@ -8,8 +8,7 @@
   src: url("../fonts/nevis_bold/nevis_bold.eot");
   src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
-}
+  font-weight: normal; }
 /* -----------------------------------------------------------------------------
 
   MAIN SCREEN 
@@ -27,14 +26,12 @@
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .row-top {
-    height: 100px;
-    color: red;
-  }
+    height: 10rem;
+    color: red; }
+
   .container {
     color: white;
-    height: 20px;
-  }
-}
+    height: 2rem; } }
 /* -----------------------------------------------------------------------------
 
   BOX SIZING RESET
@@ -43,45 +40,93 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
+
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
+
 /* -----------------------------------------------------------------------------
 
   Clearfix 
 
 ----------------------------------------------------------------------------- */
-.clearfix::before,
-.clearfix::after {
+.clearfix::before, .clearfix::after {
   content: "";
   display: table;
-  clear: both;
-}
+  clear: both; }
+
 /* -----------------------------------------------------------------------------
 
-  ROOT ELEMENTS
+                VARIABLES
   
 ----------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+
+              ROOT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%; }
+
+html, body, #wrap {
+  height: 100%; }
+
+#wrap {
+  display: table;
+  width: 100%; }
+
+.footer {
+  display: table-row; }
+
+.footer {
+  height: 1px; }
+
 body {
-  background: url(../img/bgPat1.png) repeat-x, url(../img/bgPat.png), #333949;
-}
+  background: url(../img/bgPat1.png) repeat-x, url(../img/bgPat.png); }
+
 .container {
   outline: 1px solid green;
   max-width: 86.364%;
-  margin: 0 auto;
-}
-.row-top {
+  margin: 0 auto; }
+
+/* -----------------------------------------------------------------------------
+
+                  MAIN-HEADER
+  
+----------------------------------------------------------------------------- */
+.main-header {
   outline: 1px solid red;
-  z-index: -1;
-  position: absolute;
   width: 100vw;
-  min-height: 52px;
-  background: linear-gradient(to top, #0f0f0f, #373a3e);
-}
+  max-height: 5.2rem;
+  line-height: 5.2rem;
+  background: linear-gradient(to top, #0f0f0f, #373a3e); }
+
+.main-header__subscription {
+  outline: 1px solid red;
+  display: inline-block;
+  font: 1.1rem "Verdana Regular", sans-serif;
+  color: #6a87a3; }
+  .main-header__subscription span {
+    color: #485766; }
+  .main-header__subscription a {
+    text-decoration: none;
+    color: #6a87a3; }
+
 /* -----------------------------------------------------------------------------
 
   HEADING ELEMENTS
   
 ----------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+
+             FOOTER        (styles for sticky footer  are in "root elements")
+  
+----------------------------------------------------------------------------- */
+.footer {
+  max-height: 6rem;
+  background-color: #040507;
+  color: #6a87a3; }
+  .footer p {
+    padding-left: 6.818%; }
+
+/*# sourceMappingURL=style-blueMasters.css.map */
