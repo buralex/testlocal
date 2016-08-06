@@ -98,8 +98,23 @@ html {
 
 $font-small: 1.1rem 'Verdana Regular', sans-serif;
 $font-small__color: #6a87a3;
+
+$footer-bg__color: #040507;
 $container-width: 86.364%;
 
+
+/* -----------------------------------------------------------------------------
+
+                MIXINS
+  
+----------------------------------------------------------------------------- */
+
+@mixin pref($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+     -moz-#{$prop}: #{$value};
+      -ms-#{$prop}: #{$value};
+          #{$prop}: #{$value};
+}
 /* -----------------------------------------------------------------------------
 
               ROOT ELEMENTS
@@ -121,15 +136,19 @@ html, body, #wrap {         // STICKY FOOTER
 .footer {height: 1px}         // STICKY FOOTER
 
 body {
-  //background: linear-gradient(to bottom, red, green);
-  background: url(../img/bgPat1.png) repeat-x,
-              url(../img/bgPat.png) ;
-             
+  
+  background: #1e222b;
+  background: url(../img/bgPat.png),
+              url(../img/bgPat1.png) repeat-x,
+              linear-gradient(to bottom , #1e222b , #333949 ) ;
+              
+              
 }
 
 .container {
    outline: 1px solid green;
-   max-width: $container-width;
+   width: $container-width;
+   max-width: 110rem;
    margin: 0 auto;
 }
 
@@ -140,19 +159,24 @@ body {
   
 ----------------------------------------------------------------------------- */
 
-.main-header {
-   outline: 1px solid red;
-  
-  //top: 0;
-  //left: 0;
-  width: 100vw;
-  max-height: 5.2rem;
-  line-height: 5.2rem;
+.row-top {
+  background: #111111;
+  min-width: $container-width;
   background:  linear-gradient(to top, #0f0f0f , #373a3e);
 }
 
 .main-header{
+  position: relative;
+  outline: 1px solid red;
+  height: 5.2rem;
+  
     &__subscription {
+      top:0;
+      bottom:0;
+      position: absolute;
+      margin: auto;
+      height: 1em;
+        //vertical-align: middle;
         outline: 1px solid red;
         display: inline-block;
        
@@ -167,12 +191,71 @@ body {
         }
     }
     
+    &__search {
+          //outline: 1px solid green;
+          position: absolute;
+          top:0;
+          bottom:0;
+          margin-top: auto;
+          margin-bottom: auto;
+          height: 3rem;
+          right: 0;
+          display: inline-block;
+          
+          
+          
+          & input[type="search"] {
+            font: $font-small;
+            padding-left: 1rem;
+            outline: none;
+            color: $font-small__color;
+            background-color: #0d0e0e;
+            height: 3rem;
+            width: 19.5rem;
+            margin-right: -2rem;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: inset 0 -1px 0 #292d30;
+          }
+          & input[type="search"]::-webkit-input-placeholder {color:#38444f;}
+          & input[type="search"]::-moz-placeholder          {color:#38444f;}/* Firefox 19+ */
+          & input[type="search"]:-moz-placeholder           {color:#38444f;}/* Firefox 18- */
+          & input[type="search"]:-ms-input-placeholder      {color:#38444f;}
+          
+          & input[type="submit"] {
+            //outline: 1px solid green;
+            position: relative;
+            right: 0.9rem;
+            top: 0.5rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            border: none;
+            background: url(../img/icon-search.png) ;
+          }
+          
+        }
+        
 }
 
+.test::before {
+  content: "\f002"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 400px;
+  color: lightblue;
+  top: 50%;
+  left: 50%;
+  margin: -300px 0 0 -200px;
+  z-index: 1;
+            
+}
 
 /* -----------------------------------------------------------------------------
 
-  HEADING ELEMENTS
+         HEADING ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -182,12 +265,27 @@ body {
              FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
+
 .footer {
-  
-  max-height: 6rem;
-  background-color: #040507;
+  line-height: 6.2rem;
+  height: 6.2rem;
+  background-color: $footer-bg__color;
   color: $font-small__color;
   & p {
-    padding-left: (100 - $container-width)/2;
+    margin: 0;
+    padding-left: (100% - $container-width)/2;
   }
+  &::before {
+    content:" ";
+    display: block;
+    height:2px;
+    border-top: 1px solid $footer-bg__color;
+    background-color: #181f31;
+  };
 }
+
+
+
+
+
+
