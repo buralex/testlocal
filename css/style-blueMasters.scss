@@ -33,34 +33,49 @@
 ----------------------------------------------------------------------------- */
 
 
-@media screen and (min-width:0px) and (max-width:320px) {
-	
-}
-
-@media screen and (min-width:321px) and (max-width:480px) {
-  .row-top {
-    height: 10rem;
-    color: red;
-  }
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) {
   
-  .container {
-    color: white;
-    height: 2rem;
-  }
-	
+  
 }
 
-@media screen and (min-width:481px) and (max-width:768px) {
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) {
+  
+  
 }
 
-@media screen and (min-width:769px) and (max-width:992px) {
-}	
- 
-
-@media screen and (min-width:993px) and (max-width:1200px) {
-	
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+  
+  
 }
 
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+  
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  
+  
+}
+
+/*------------------- IE10+ CSS styles go here -------------------------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .main-header__search input[type="submit"] {
+      top: 0.1rem !important;
+    }                           
+}
+
+/*------------------- Safari 5.1-6.0 only. CSS styles go here -------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+     ::i-block-chrome, .main-header__search input[type="submit"] {
+        top: -0.2rem !important;
+    }
+}
 /* -----------------------------------------------------------------------------
 
   BOX SIZING RESET
@@ -84,7 +99,7 @@ html {
 
 .clearfix {
   &::before, &::after {
-    content: "";
+    content: " ";
     display: table;
     clear: both;
   }
@@ -99,8 +114,13 @@ html {
 $font-small: 1.1rem 'Verdana Regular', sans-serif;
 $font-small__color: #6a87a3;
 
+$main-header-height: 5.2rem;
 $footer-bg__color: #040507;
-$container-width: 86.364%;
+$footer-height: 6rem;
+
+
+$main-container-width: 95rem;
+
 
 
 /* -----------------------------------------------------------------------------
@@ -110,10 +130,10 @@ $container-width: 86.364%;
 ----------------------------------------------------------------------------- */
 
 @mixin pref($prop, $value) {
-  -webkit-#{$prop}: #{$value};
-     -moz-#{$prop}: #{$value};
-      -ms-#{$prop}: #{$value};
-          #{$prop}: #{$value};
+ #{$prop}: -webkit-#{$value};
+ #{$prop}: -moz-#{$value};
+ #{$prop}: -ms-#{$value};
+ #{$prop}: #{$value};
 }
 /* -----------------------------------------------------------------------------
 
@@ -121,37 +141,38 @@ $container-width: 86.364%;
   
 ----------------------------------------------------------------------------- */
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
-
-html, body, #wrap {         // STICKY FOOTER
+html, body{
   height: 100%;
 }
-
-#wrap {
-  display:table;            // STICKY FOOTER
-  width: 100%;
-}
-.footer { display: table-row }     
-.footer {height: 1px}         // STICKY FOOTER
 
 body {
   
   background: #1e222b;
   background: url(../img/bgPat.png),
               url(../img/bgPat1.png) repeat-x,
-              linear-gradient(to bottom , #1e222b , #333949 ) ;
+              -webkit-linear-gradient( top, #1e222b , #333949 );
+  background: url(../img/bgPat.png),
+              url(../img/bgPat1.png) repeat-x,
+              linear-gradient( to bottom, #1e222b , #333949 );
+              
+              
+
               
               
 }
 
-.container {
-   outline: 1px solid green;
-   width: $container-width;
+.main-container {
+   width: $main-container-width;
    max-width: 110rem;
    margin: 0 auto;
 }
 
+.wrap {
+  min-height: 100%;
+  margin: 0 auto -6.2rem; /* the bottom margin is the negative value of the footer's height */
+}
 
 /* -----------------------------------------------------------------------------
 
@@ -160,97 +181,93 @@ body {
 ----------------------------------------------------------------------------- */
 
 .row-top {
-  background: #111111;
-  min-width: $container-width;
-  background:  linear-gradient(to top, #0f0f0f , #373a3e);
+  height: $main-header-height;
+  background: #18191a;
+  min-width: $main-container-width;
+  background: -webkit-linear-gradient(bottom, #0f0f0f , #373a3e);
+  background:         linear-gradient(to top, #0f0f0f , #373a3e);
 }
 
 .main-header{
+  padding: 0.5rem 0;
   position: relative;
-  outline: 1px solid red;
-  height: 5.2rem;
-  
-    &__subscription {
-      top:0;
-      bottom:0;
-      position: absolute;
-      margin: auto;
-      height: 1em;
-        //vertical-align: middle;
-        outline: 1px solid red;
-        display: inline-block;
-       
-        font: $font-small;
-        color: $font-small__color;
-        & span {
-          color: #485766;
-        }
-        & a {
-          text-decoration: none;
-          color: $font-small__color;
-        }
-    }
-    
-    &__search {
-          //outline: 1px solid green;
-          position: absolute;
-          top:0;
-          bottom:0;
-          margin-top: auto;
-          margin-bottom: auto;
-          height: 3rem;
-          right: 0;
-          display: inline-block;
-          
-          
-          
-          & input[type="search"] {
-            font: $font-small;
-            padding-left: 1rem;
-            outline: none;
-            color: $font-small__color;
-            background-color: #0d0e0e;
-            height: 3rem;
-            width: 19.5rem;
-            margin-right: -2rem;
-            border: none;
-            border-radius: 1rem;
-            box-shadow: inset 0 -1px 0 #292d30;
-          }
-          & input[type="search"]::-webkit-input-placeholder {color:#38444f;}
-          & input[type="search"]::-moz-placeholder          {color:#38444f;}/* Firefox 19+ */
-          & input[type="search"]:-moz-placeholder           {color:#38444f;}/* Firefox 18- */
-          & input[type="search"]:-ms-input-placeholder      {color:#38444f;}
-          
-          & input[type="submit"] {
-            //outline: 1px solid green;
-            position: relative;
-            right: 0.9rem;
-            top: 0.5rem;
-            width: 1.8rem;
-            height: 1.8rem;
-            border: none;
-            background: url(../img/icon-search.png) ;
-          }
-          
-        }
-        
+  //outline: 1px solid red;
+  height: $main-header-height;
 }
 
-.test::before {
-  content: "\f002"; 
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
+.main-header__subscription {
+  top:0;               //-------------- alternative to  vertical-align: middle;
+  bottom:0;
   position: absolute;
-  font-size: 400px;
-  color: lightblue;
-  top: 50%;
-  left: 50%;
-  margin: -300px 0 0 -200px;
-  z-index: 1;
-            
+  margin: auto;
+  height: 1em;         //-------------- alternative to  vertical-align: middle;
+                           
+  outline: 1px solid red;
+  display: inline-block;
+ 
+  font: $font-small;
+  color: $font-small__color;
+    & span {
+      color: #485766;
+    }
+    & a {
+      text-decoration: none;
+      color: $font-small__color;
+    }
+}
+
+.main-header__search {
+  //outline: 1px solid green;
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 3rem;
+  right: 0;
+  display: inline-block;
+
+    & input[type="search"] {
+      font: $font-small;
+      padding-left: 1rem;
+      padding-right: 2.5rem;
+      outline: none;
+      color: $font-small__color;
+      background-color: #0d0e0e;
+      height: 3rem;
+      width: 19.5rem;
+      margin-right: -2rem;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: inset 0 -1px 0 #292d30;
+    }
+    
+    & input[type="search"]:focus {
+      box-shadow: 1px 1px 1px #38444f, -1px -1px 1px #38444f;
+    }
+    
+    & input[type="search"]::-webkit-input-placeholder {color: #38444f; }
+    & input[type="search"]::-moz-placeholder          {color: #38444f; }/* Firefox 19+ */
+    & input[type="search"]:-moz-placeholder           {color: #38444f; }/* Firefox 18- */
+    & input[type="search"]:-ms-input-placeholder      {color: #38444f;}
+    
+    & input[type="submit"] {
+      //outline: 1px solid green;
+      position: relative;
+      right: 0.5rem;
+      top: 0.5rem;
+      
+      width: 1.8rem;
+      height: 1.8rem;
+      
+      border: none;
+      background: url(../img/icon-search1.png) no-repeat ;
+      opacity: 0.5;
+    }
+    
+    & input[type="submit"]:hover {
+      opacity: 1;
+    }
 }
 
 /* -----------------------------------------------------------------------------
@@ -265,27 +282,143 @@ body {
              FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
+footer, .push {
+  //outline: 1px solid red;
+	height: $footer-height; /* '.push' must be the same height as 'footer' */
+}
 
 .footer {
-  line-height: 6.2rem;
-  height: 6.2rem;
+  padding: 0.5rem 0;
+  //border: 5px solid gold;
+  
+  position: relative;
+  
+  
+  height: $footer-height;
+  //box-shadow: 0 -1px 0 $footer-bg__color;  //------------- two-striped border above the footer
+  //border-top: 1px solid #181f31;           //------------- two-striped border above the footer
   background-color: $footer-bg__color;
   color: $font-small__color;
-  & p {
-    margin: 0;
-    padding-left: (100% - $container-width)/2;
+  & .copyright {
+    outline: 1px solid blue;
+    display: inline-block;
+    top:0;
+    bottom:0;
+    position: absolute;
+    margin: auto;
+    height: 1em;
+    & p {
+      margin: 0;
+    }
   }
-  &::before {
-    content:" ";
-    display: block;
-    height:2px;
-    border-top: 1px solid $footer-bg__color;
-    background-color: #181f31;
-  };
+  
+}
+
+.row-bottom {
+  height: $footer-height + 0.2rem;
+  background: $footer-bg__color;
+  min-width: $main-container-width ;
+  box-shadow: 0 -1px 0 $footer-bg__color;  //------------- two-striped border above the footer
+  border-top: 1px solid #181f31;
+}
+
+/* -----------------------------------------------------------------------------
+
+                               SLIDER
+  
+----------------------------------------------------------------------------- */
+
+
+.wrapper-slider {
+  border: 1rem solid white;
+  
+  //overflow: hidden;
+  max-height: 34rem;
+  max-width: $main-container-width;
+  margin: 0 auto 0 auto;
+  position: relative;
+  text-align: left;
 }
 
 
+.slider {
+  position: relative;
+  outline: 2px solid blue;
+  max-height: 32rem;
+  
+}
 
+
+.slider img {
+  height: auto;
+  width: 100%;
+  display: none;
+  
+}
+
+img.showImage {
+  display: block;
+}
+
+img.hideImage {
+  display: none;
+}
+button:focus {outline:0;}
+
+button.next, button.prev {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  
+  background-color: #212121;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.slider button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.next {
+  right: 0;
+  
+  opacity: 0.4;
+}
+
+.prev {
+  left: 0;
+  
+  opacity: 0.4;
+}
+
+.controls {
+  
+  left: 50%;
+  margin-left: -3rem;
+  bottom: 0;
+  width: 5rem;
+  position: absolute;
+}
+
+.controls i {
+  background: -webkit-linear-gradient( bottom, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
+  background:         linear-gradient( to top, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
+  cursor: pointer;
+  display: inline-block;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50% ;
+  //border: 2px solid gray;
+}
+
+i.bullet-active {
+  background: -webkit-linear-gradient( bottom, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
+  background:         linear-gradient( to top, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
+}
 
 
 

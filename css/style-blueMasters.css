@@ -24,14 +24,14 @@
   ADAPTIVE 
 
 ----------------------------------------------------------------------------- */
-@media screen and (min-width: 321px) and (max-width: 480px) {
-  .row-top {
-    height: 10rem;
-    color: red; }
-
-  .container {
-    color: white;
-    height: 2rem; } }
+/*------------------- IE10+ CSS styles go here -------------------------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-header__search input[type="submit"] {
+    top: 0.1rem !important; } }
+/*------------------- Safari 5.1-6.0 only. CSS styles go here -------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+  ::i-block-chrome, .main-header__search input[type="submit"] {
+    top: -0.2rem !important; } }
 /* -----------------------------------------------------------------------------
 
   BOX SIZING RESET
@@ -51,7 +51,7 @@ html {
 
 ----------------------------------------------------------------------------- */
 .clearfix::before, .clearfix::after {
-  content: "";
+  content: " ";
   display: table;
   clear: both; }
 
@@ -71,30 +71,25 @@ html {
   
 ----------------------------------------------------------------------------- */
 html {
-  font-size: 62.5%; }
+  font-size: 10px; }
 
-html, body, #wrap {
+html, body {
   height: 100%; }
-
-#wrap {
-  display: table;
-  width: 100%; }
-
-.footer {
-  display: table-row; }
-
-.footer {
-  height: 1px; }
 
 body {
   background: #1e222b;
+  background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, -webkit-linear-gradient(top, #1e222b, #333949);
   background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, linear-gradient(to bottom, #1e222b, #333949); }
 
-.container {
-  outline: 1px solid green;
-  width: 86.364%;
+.main-container {
+  width: 95rem;
   max-width: 110rem;
   margin: 0 auto; }
+
+.wrap {
+  min-height: 100%;
+  margin: 0 auto -6.2rem;
+  /* the bottom margin is the negative value of the footer's height */ }
 
 /* -----------------------------------------------------------------------------
 
@@ -102,82 +97,78 @@ body {
   
 ----------------------------------------------------------------------------- */
 .row-top {
-  background: #111111;
-  min-width: 86.364%;
+  height: 5.2rem;
+  background: #18191a;
+  min-width: 95rem;
+  background: -webkit-linear-gradient(bottom, #0f0f0f, #373a3e);
   background: linear-gradient(to top, #0f0f0f, #373a3e); }
 
 .main-header {
+  padding: 0.5rem 0;
   position: relative;
-  outline: 1px solid red;
   height: 5.2rem; }
-  .main-header__subscription {
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    margin: auto;
-    height: 1em;
-    outline: 1px solid red;
-    display: inline-block;
-    font: 1.1rem "Verdana Regular", sans-serif;
-    color: #6a87a3; }
-    .main-header__subscription span {
-      color: #485766; }
-    .main-header__subscription a {
-      text-decoration: none;
-      color: #6a87a3; }
-  .main-header__search {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 3rem;
-    right: 0;
-    display: inline-block;
-    /* Firefox 19+ */
-    /* Firefox 18- */ }
-    .main-header__search input[type="search"] {
-      font: 1.1rem "Verdana Regular", sans-serif;
-      padding-left: 1rem;
-      outline: none;
-      color: #6a87a3;
-      background-color: #0d0e0e;
-      height: 3rem;
-      width: 19.5rem;
-      margin-right: -2rem;
-      border: none;
-      border-radius: 1rem;
-      box-shadow: inset 0 -1px 0 #292d30; }
-    .main-header__search input[type="search"]::-webkit-input-placeholder {
-      color: #38444f; }
-    .main-header__search input[type="search"]::-moz-placeholder {
-      color: #38444f; }
-    .main-header__search input[type="search"]:-moz-placeholder {
-      color: #38444f; }
-    .main-header__search input[type="search"]:-ms-input-placeholder {
-      color: #38444f; }
-    .main-header__search input[type="submit"] {
-      position: relative;
-      right: 0.9rem;
-      top: 0.5rem;
-      width: 1.8rem;
-      height: 1.8rem;
-      border: none;
-      background: url(../img/icon-search.png); }
 
-.test::before {
-  content: "\f002";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
+.main-header__subscription {
+  top: 0;
+  bottom: 0;
   position: absolute;
-  font-size: 400px;
-  color: lightblue;
-  top: 50%;
-  left: 50%;
-  margin: -300px 0 0 -200px;
-  z-index: 1; }
+  margin: auto;
+  height: 1em;
+  outline: 1px solid red;
+  display: inline-block;
+  font: 1.1rem "Verdana Regular", sans-serif;
+  color: #6a87a3; }
+  .main-header__subscription span {
+    color: #485766; }
+  .main-header__subscription a {
+    text-decoration: none;
+    color: #6a87a3; }
+
+.main-header__search {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 3rem;
+  right: 0;
+  display: inline-block;
+  /* Firefox 19+ */
+  /* Firefox 18- */ }
+  .main-header__search input[type="search"] {
+    font: 1.1rem "Verdana Regular", sans-serif;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
+    outline: none;
+    color: #6a87a3;
+    background-color: #0d0e0e;
+    height: 3rem;
+    width: 19.5rem;
+    margin-right: -2rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: inset 0 -1px 0 #292d30; }
+  .main-header__search input[type="search"]:focus {
+    box-shadow: 1px 1px 1px #38444f, -1px -1px 1px #38444f; }
+  .main-header__search input[type="search"]::-webkit-input-placeholder {
+    color: #38444f; }
+  .main-header__search input[type="search"]::-moz-placeholder {
+    color: #38444f; }
+  .main-header__search input[type="search"]:-moz-placeholder {
+    color: #38444f; }
+  .main-header__search input[type="search"]:-ms-input-placeholder {
+    color: #38444f; }
+  .main-header__search input[type="submit"] {
+    position: relative;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: none;
+    background: url(../img/icon-search1.png) no-repeat;
+    opacity: 0.5; }
+  .main-header__search input[type="submit"]:hover {
+    opacity: 1; }
 
 /* -----------------------------------------------------------------------------
 
@@ -189,19 +180,107 @@ body {
              FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
+footer, .push {
+  height: 6rem;
+  /* '.push' must be the same height as 'footer' */ }
+
 .footer {
-  line-height: 6.2rem;
-  height: 6.2rem;
+  padding: 0.5rem 0;
+  position: relative;
+  height: 6rem;
   background-color: #040507;
   color: #6a87a3; }
-  .footer p {
-    margin: 0;
-    padding-left: 6.818%; }
-  .footer::before {
-    content: " ";
-    display: block;
-    height: 2px;
-    border-top: 1px solid #040507;
-    background-color: #181f31; }
+  .footer .copyright {
+    outline: 1px solid blue;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+    height: 1em; }
+    .footer .copyright p {
+      margin: 0; }
+
+.row-bottom {
+  height: 6.2rem;
+  background: #040507;
+  min-width: 95rem;
+  box-shadow: 0 -1px 0 #040507;
+  border-top: 1px solid #181f31; }
+
+/* -----------------------------------------------------------------------------
+
+                               SLIDER
+  
+----------------------------------------------------------------------------- */
+.wrapper-slider {
+  border: 1rem solid white;
+  max-height: 34rem;
+  max-width: 95rem;
+  margin: 0 auto 0 auto;
+  position: relative;
+  text-align: left; }
+
+.slider {
+  position: relative;
+  outline: 2px solid blue;
+  max-height: 32rem; }
+
+.slider img {
+  height: auto;
+  width: 100%;
+  display: none; }
+
+img.showImage {
+  display: block; }
+
+img.hideImage {
+  display: none; }
+
+button:focus {
+  outline: 0; }
+
+button.next, button.prev {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  background-color: #212121;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 20px; }
+
+.slider button:hover {
+  opacity: 0.6;
+  cursor: pointer; }
+
+.next {
+  right: 0;
+  opacity: 0.4; }
+
+.prev {
+  left: 0;
+  opacity: 0.4; }
+
+.controls {
+  left: 50%;
+  margin-left: -3rem;
+  bottom: 0;
+  width: 5rem;
+  position: absolute; }
+
+.controls i {
+  background: -webkit-linear-gradient(bottom, #2e3850 0%, #4a556d 100%);
+  background: linear-gradient(to top, #2e3850 0%, #4a556d 100%);
+  cursor: pointer;
+  display: inline-block;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50%; }
+
+i.bullet-active {
+  background: -webkit-linear-gradient(bottom, #297baa 0%, #5db4dc 100%);
+  background: linear-gradient(to top, #297baa 0%, #5db4dc 100%); }
 
 /*# sourceMappingURL=style-blueMasters.css.map */
