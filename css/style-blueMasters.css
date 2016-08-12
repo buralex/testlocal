@@ -240,19 +240,17 @@ footer, .push {
 .slider img.hideImage {
   display: none; }
 
-button:focus {
-  outline: 0; }
-
-button.next, button.prev {
+.next, .prev {
+  outline: none;
   position: absolute;
   height: 100%;
   top: 0;
   background-color: #212121;
   color: #fff;
   border: none;
-  font-size: 15px;
+  font-size: 4rem;
   font-weight: 700;
-  padding: 20px; }
+  padding: 1.5rem; }
 
 .slider button:hover {
   opacity: 0.6;
@@ -260,18 +258,24 @@ button.next, button.prev {
 
 .next {
   right: 0;
+  background: -webkit-linear-gradient(right, #212121, transparent);
+  background: linear-gradient(to left, #212121, transparent);
   opacity: 0.4; }
 
 .prev {
   left: 0;
+  background: -webkit-linear-gradient(left, #212121, transparent);
+  background: linear-gradient(to right, #212121, transparent);
   opacity: 0.4; }
 
 .controls {
+  outline: 1px solid red;
   left: 50%;
   margin-left: -8rem;
   bottom: 0;
   width: 16rem;
-  position: absolute; }
+  position: absolute;
+  text-align: center; }
 
 .controls i {
   margin: 0 0.3rem;
