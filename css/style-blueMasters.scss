@@ -356,11 +356,15 @@ footer, .push {
   
 }
 
-img.showImage {
+.slider img:first-child {
   display: block;
 }
 
-img.hideImage {
+.slider img.showImage {
+  display: block;
+}
+
+.slider img.hideImage {
   display: none;
 }
 button:focus {outline:0;}
@@ -398,13 +402,14 @@ button.next, button.prev {
 .controls {
   
   left: 50%;
-  margin-left: -3rem;
+  margin-left: -8rem;
   bottom: 0;
-  width: 5rem;
+  width: 16rem;
   position: absolute;
 }
 
 .controls i {
+  margin: 0 0.3rem;
   background: -webkit-linear-gradient( bottom, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
   background:         linear-gradient( to top, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
   cursor: pointer;

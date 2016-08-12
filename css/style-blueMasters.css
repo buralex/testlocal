@@ -231,10 +231,13 @@ footer, .push {
   width: 100%;
   display: none; }
 
-img.showImage {
+.slider img:first-child {
   display: block; }
 
-img.hideImage {
+.slider img.showImage {
+  display: block; }
+
+.slider img.hideImage {
   display: none; }
 
 button:focus {
@@ -265,12 +268,13 @@ button.next, button.prev {
 
 .controls {
   left: 50%;
-  margin-left: -3rem;
+  margin-left: -8rem;
   bottom: 0;
-  width: 5rem;
+  width: 16rem;
   position: absolute; }
 
 .controls i {
+  margin: 0 0.3rem;
   background: -webkit-linear-gradient(bottom, #2e3850 0%, #4a556d 100%);
   background: linear-gradient(to top, #2e3850 0%, #4a556d 100%);
   cursor: pointer;
