@@ -229,20 +229,16 @@ footer, .push {
 .slider img {
   height: auto;
   width: 100%;
-  display: none; }
-
-.slider img:first-child {
-  display: block; }
+  display: none;
+  opacity: 0;
+  transition: 1s; }
 
 .slider img.showImage {
+  opacity: 1;
   width: 100%;
   display: block;
   animation: imgShow 0.5s;
   -webkit-animation: imgShow 0.5s ease-in-out; }
-
-.slider img.hideImage {
-  display: none;
-  opacity: 0; }
 
 @keyframes imgShow {
   0% {

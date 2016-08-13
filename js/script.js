@@ -1,95 +1,71 @@
 
 window.onload = function() {
+ 
+var carousel = (function(){
+  var slider = document.querySelector('.slider');
+  var next = slider.querySelector('.next');
+  var prev = slider.querySelector('.prev');
+  var images = slider.querySelectorAll('img');
+  var bullets = slider.querySelectorAll('.controls i');
+  var counterImg = 0;
+  //var counterBull = 0;
+  var currentImg = images[0];
+  var currentBull = bullets[0];
   
-  var slider = document.querySelector('.slider'),
-      images = slider.querySelectorAll('img'),
-      bullets = slider.querySelectorAll('.controls i'),
-      counter = 0,
-      nextBtn = slider.getElementsByClassName('next')[0],
-      prevBtn = slider.getElementsByClassName('prev')[0];
+  //box.classList.add('active');
   
-  
-  function showImg(index) {
-    // Remove all classnames on the images (so hide them)
-    for (var i = 0; i < images.length; i++ ) {
-      images[i].className = 'hideImage';  
+  function navigate(direction) {
+    currentImg.classList.remove('showImage');
+    currentBull.classList.remove('bullet-active');
+    
+    counterImg = counterImg + direction;
+    if (direction === -1 && 
+        counterImg < 0) { 
+      counterImg = images.length - 1; 
+    }
+    if (direction === 1 && 
+        counterImg > images.length - 1) { 
+      counterImg = 0;
     }
     
-    // Add the showImage classname to the img-element you want
-    images[index].className = 'showImage';
+    currentBull = bullets[counterImg];
+    currentBull.classList.add('bullet-active');
+    currentImg = images[counterImg];
+    currentImg.classList.add('showImage');
   }
+  next.addEventListener('click', function(ev) {
+    navigate(1);
+  });
+  prev.addEventListener('click', function(ev) {
+    navigate(-1);
+  });
   
   
-  function nextImg() {
-    // counter variable gets the current img selected
-    // if we have the last img, we switch back to the first one again
-    
-    if (counter < images.length - 1) {
-      counter++ ;
-    } else {
-      counter = 0;
-    }
-    
-    toggleBullet(counter);
-    showImg(counter);
-  }
-  
-  function prevImg() {
-    // counter variable gets the current img selected
-    // if we have the first img, we switch back to the last one again
-    
-    if (counter > 0) {
-      counter--;
-    } else {
-      counter = images.length - 1;
-    }
-    
-    toggleBullet(counter);
-    showImg(counter);
-  }
-  
-  function toggleBullet(index) {
-    for (var i = 0; i < bullets.length; i++ ) {
-     
-      var currentBullet = bullets[i];
-      
-      bullets[i].classList.remove('bullet-active');  // disable all bullets 
-      
-      handleClick(currentBullet, i)
-      
-    }
-  
-   bullets[index].classList.add('bullet-active');
-  }
-  
-  function handleClick(currentEl, currentindex) {
-   
-    currentEl.addEventListener('click', toggleImgByBullet);
+  function handleClick(currElem, currentindex) {
+    currElem.addEventListener('click', toggleImgByBullet);
    
    function toggleImgByBullet() {
-    for (var i = 0; i < bullets.length; i++ ){
-      bullets[i].classList.remove('bullet-active');  // disable all bullets
-    }
-    
-     bullets[currentindex].classList.add('bullet-active');
-     showImg(currentindex);
+     currentImg.classList.remove('showImage');       //  disable class on global variables
+     currentBull.classList.remove('bullet-active');   // disable class on global variables
+     currElem.classList.add('bullet-active');
+     currentBull = bullets[currentindex];     // to global variable assign current index
+     images[currentindex].classList.add('showImage');
+     currentImg = images[currentindex];       // to global variable assign current index
    }
-    
   }
   
+  function toggleBullet() {
+    for (var i = 0; i < bullets.length; i++ ) {
+       handleClick( bullets[i], i)
+    }
+  }
+navigate(0);
+toggleBullet();
+
+})();
+
+
   
-//  If you want to have an auto-slider, uncomment this: 
-//  window.setInterval(prevImg, 2000);
-  
-  // give the buttons an onclick event
-  nextBtn.onclick = nextImg;
-  prevBtn.onclick = prevImg;
-  
-  
-  // start it
-  toggleBullet(counter);
-  showImg(counter);          
-       
 };
   
   
