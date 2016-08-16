@@ -25,13 +25,7 @@
 
 ----------------------------------------------------------------------------- */
 /*------------------- IE10+ CSS styles go here -------------------------------*/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .main-header__search input[type="submit"] {
-    top: 0.1rem !important; } }
 /*------------------- Safari 5.1-6.0 only. CSS styles go here -------------------------------*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1) {
-  ::i-block-chrome, .main-header__search input[type="submit"] {
-    top: -0.2rem !important; } }
 /* -----------------------------------------------------------------------------
 
   BOX SIZING RESET
@@ -71,25 +65,21 @@ html {
   
 ----------------------------------------------------------------------------- */
 html {
-  font-size: 10px; }
-
-html, body {
-  height: 100%; }
+  font-size: 10px;
+  position: relative;
+  min-height: 100%; }
 
 body {
+  margin-bottom: 6rem;
+  /* the bottom margin is the value of the footer's height */
   background: #1e222b;
-  background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, -webkit-linear-gradient(top, #1e222b, #333949);
-  background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, linear-gradient(to bottom, #1e222b, #333949); }
+  background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, -webkit-linear-gradient(top, #1e222b, #333949) fixed;
+  background: url(../img/bgPat.png), url(../img/bgPat1.png) repeat-x, linear-gradient(to bottom, #1e222b, #333949) fixed; }
 
 .main-container {
-  width: 95rem;
-  max-width: 110rem;
-  margin: 0 auto; }
-
-.wrap {
-  min-height: 100%;
-  margin: 0 auto -6.2rem;
-  /* the bottom margin is the negative value of the footer's height */ }
+  max-width: 95rem;
+  margin: 0 auto;
+  padding: 1.5rem; }
 
 /* -----------------------------------------------------------------------------
 
@@ -99,7 +89,6 @@ body {
 .row-top {
   height: 5.2rem;
   background: #18191a;
-  min-width: 95rem;
   background: -webkit-linear-gradient(bottom, #0f0f0f, #373a3e);
   background: linear-gradient(to top, #0f0f0f, #373a3e); }
 
@@ -114,7 +103,6 @@ body {
   position: absolute;
   margin: auto;
   height: 1em;
-  outline: 1px solid red;
   display: inline-block;
   font: 1.1rem "Verdana Regular", sans-serif;
   color: #6a87a3; }
@@ -124,6 +112,7 @@ body {
     text-decoration: none;
     color: #6a87a3; }
 
+/*----------------------------- search form ---------------------------------*/
 .main-header__search {
   position: absolute;
   top: 0;
@@ -135,7 +124,7 @@ body {
   display: inline-block;
   /* Firefox 19+ */
   /* Firefox 18- */ }
-  .main-header__search input[type="search"] {
+  .main-header__search .search-field {
     font: 1.1rem "Verdana Regular", sans-serif;
     padding-left: 1rem;
     padding-right: 2.5rem;
@@ -144,30 +133,34 @@ body {
     background-color: #0d0e0e;
     height: 3rem;
     width: 19.5rem;
-    margin-right: -2rem;
     border: none;
     border-radius: 1rem;
     box-shadow: inset 0 -1px 0 #292d30; }
-  .main-header__search input[type="search"]:focus {
+  .main-header__search .search-field:focus {
     box-shadow: 1px 1px 1px #38444f, -1px -1px 1px #38444f; }
-  .main-header__search input[type="search"]::-webkit-input-placeholder {
+  .main-header__search .search-field::-webkit-input-placeholder {
     color: #38444f; }
-  .main-header__search input[type="search"]::-moz-placeholder {
+  .main-header__search .search-field::-moz-placeholder {
     color: #38444f; }
-  .main-header__search input[type="search"]:-moz-placeholder {
+  .main-header__search .search-field:-moz-placeholder {
     color: #38444f; }
-  .main-header__search input[type="search"]:-ms-input-placeholder {
+  .main-header__search .search-field:-ms-input-placeholder {
     color: #38444f; }
-  .main-header__search input[type="submit"] {
-    position: relative;
-    right: 0.5rem;
-    top: 0.5rem;
+  .main-header__search .search-button {
+    display: inline-block;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
     width: 1.8rem;
     height: 1.8rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
     border: none;
     background: url(../img/icon-search1.png) no-repeat;
     opacity: 0.5; }
-  .main-header__search input[type="submit"]:hover {
+  .main-header__search .search-button:hover {
+    cursor: pointer;
     opacity: 1; }
 
 /* -----------------------------------------------------------------------------
@@ -177,43 +170,70 @@ body {
 ----------------------------------------------------------------------------- */
 /* -----------------------------------------------------------------------------
 
+               index-content
+  
+----------------------------------------------------------------------------- */
+.index-content {
+  color: white;
+  height: 10rem;
+  outline: 1px solid green; }
+  .index-content .left, .index-content .mid, .index-content .right {
+    border: 1px solid red;
+    height: 5rem;
+    margin-bottom: 1rem; }
+    .index-content .left .inner, .index-content .mid .inner, .index-content .right .inner {
+      height: 1rem; }
+
+.row-inner div {
+  height: 1rem;
+  outline: 1px solid green; }
+
+/* -----------------------------------------------------------------------------
+
              FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
-footer, .push {
+body .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 6rem;
-  /* '.push' must be the same height as 'footer' */ }
-
-.footer {
   padding: 0.5rem 0;
-  position: relative;
-  height: 6rem;
   background-color: #040507;
   color: #6a87a3; }
-  .footer .copyright {
-    outline: 1px solid blue;
-    display: inline-block;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    margin: auto;
-    height: 1em; }
-    .footer .copyright p {
-      margin: 0; }
+
+.footer .copyright {
+  outline: 1px solid blue;
+  display: inline-block;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  height: 1em; }
+  .footer .copyright p {
+    margin: 0; }
+
+.block-rel {
+  position: relative; }
 
 .row-bottom {
   height: 6.2rem;
   background: #040507;
-  min-width: 95rem;
   box-shadow: 0 -1px 0 #040507;
   border-top: 1px solid #181f31; }
+
+.rg {
+  color: red;
+  display: inline-block;
+  position: absolute;
+  right: 0; }
 
 /* -----------------------------------------------------------------------------
 
                                SLIDER
   
 ----------------------------------------------------------------------------- */
-.wrapper-slider {
+.slider-box {
   border: 1rem solid white;
   max-height: 34rem;
   max-width: 95rem;
@@ -222,6 +242,7 @@ footer, .push {
   text-align: left; }
 
 .slider {
+  background-color: #1e222b;
   position: relative;
   outline: 2px solid green;
   max-height: 32rem; }
@@ -237,8 +258,8 @@ footer, .push {
   opacity: 1;
   width: 100%;
   display: block;
-  animation: imgShow 0.5s;
-  -webkit-animation: imgShow 0.5s ease-in-out; }
+  animation: imgShow 0.3s;
+  -webkit-animation: imgShow 0.3s; }
 
 @keyframes imgShow {
   0% {

@@ -65,16 +65,14 @@
 
 /*------------------- IE10+ CSS styles go here -------------------------------*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .main-header__search input[type="submit"] {
-      top: 0.1rem !important;
-    }                           
+                            
 }
 
 /*------------------- Safari 5.1-6.0 only. CSS styles go here -------------------------------*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1) {
-     ::i-block-chrome, .main-header__search input[type="submit"] {
-        top: -0.2rem !important;
-    }
+    // ::i-block-chrome, selector {
+    //   
+    // }  
 }
 /* -----------------------------------------------------------------------------
 
@@ -111,7 +109,7 @@ html {
   
 ----------------------------------------------------------------------------- */
 
-$font-small: 1.1rem 'Verdana Regular', sans-serif;
+$font-small: 1.1rem "Verdana Regular", sans-serif;
 $font-small__color: #6a87a3;
 
 $main-header-height: 5.2rem;
@@ -140,22 +138,22 @@ $main-container-width: 95rem;
               ROOT ELEMENTS
   
 ----------------------------------------------------------------------------- */
-html {
+
+html{
   font-size: 10px;
-}
-html, body{
-  height: 100%;
+  position: relative;  // for sticky footer
+  min-height: 100%;    // for sticky footer
 }
 
 body {
-  
+  margin-bottom: $footer-height; /* the bottom margin is the value of the footer's height */
   background: #1e222b;
   background: url(../img/bgPat.png),
               url(../img/bgPat1.png) repeat-x,
-              -webkit-linear-gradient( top, #1e222b , #333949 );
+              -webkit-linear-gradient( top, #1e222b , #333949 )  fixed;
   background: url(../img/bgPat.png),
               url(../img/bgPat1.png) repeat-x,
-              linear-gradient( to bottom, #1e222b , #333949 );
+              linear-gradient( to bottom, #1e222b , #333949 )  fixed;
               
               
 
@@ -164,15 +162,12 @@ body {
 }
 
 .main-container {
-   width: $main-container-width;
-   max-width: 110rem;
+  //outline: 1px solid green;
+   max-width: $main-container-width;
    margin: 0 auto;
+   padding: 1.5rem;
 }
 
-.wrap {
-  min-height: 100%;
-  margin: 0 auto -6.2rem; /* the bottom margin is the negative value of the footer's height */
-}
 
 /* -----------------------------------------------------------------------------
 
@@ -183,7 +178,7 @@ body {
 .row-top {
   height: $main-header-height;
   background: #18191a;
-  min-width: $main-container-width;
+  
   background: -webkit-linear-gradient(bottom, #0f0f0f , #373a3e);
   background:         linear-gradient(to top, #0f0f0f , #373a3e);
 }
@@ -201,20 +196,20 @@ body {
   position: absolute;
   margin: auto;
   height: 1em;         //-------------- alternative to  vertical-align: middle;
-                           
-  outline: 1px solid red;
   display: inline-block;
- 
   font: $font-small;
   color: $font-small__color;
     & span {
       color: #485766;
     }
     & a {
+      //border-right: 1px solid red;
       text-decoration: none;
       color: $font-small__color;
     }
 }
+
+/*----------------------------- search form ---------------------------------*/
 
 .main-header__search {
   //outline: 1px solid green;
@@ -227,7 +222,7 @@ body {
   right: 0;
   display: inline-block;
 
-    & input[type="search"] {
+    & .search-field {
       font: $font-small;
       padding-left: 1rem;
       padding-right: 2.5rem;
@@ -236,36 +231,40 @@ body {
       background-color: #0d0e0e;
       height: 3rem;
       width: 19.5rem;
-      margin-right: -2rem;
+      //margin-right: -2rem;
       border: none;
       border-radius: 1rem;
       box-shadow: inset 0 -1px 0 #292d30;
     }
     
-    & input[type="search"]:focus {
+    & .search-field:focus {
       box-shadow: 1px 1px 1px #38444f, -1px -1px 1px #38444f;
     }
     
-    & input[type="search"]::-webkit-input-placeholder {color: #38444f; }
-    & input[type="search"]::-moz-placeholder          {color: #38444f; }/* Firefox 19+ */
-    & input[type="search"]:-moz-placeholder           {color: #38444f; }/* Firefox 18- */
-    & input[type="search"]:-ms-input-placeholder      {color: #38444f;}
+    & .search-field::-webkit-input-placeholder {color: #38444f; }
+    & .search-field::-moz-placeholder          {color: #38444f; }/* Firefox 19+ */
+    & .search-field:-moz-placeholder           {color: #38444f; }/* Firefox 18- */
+    & .search-field:-ms-input-placeholder      {color: #38444f;}
     
-    & input[type="submit"] {
-      //outline: 1px solid green;
-      position: relative;
-      right: 0.5rem;
-      top: 0.5rem;
-      
+    & .search-button {
+      display: inline-block;
+      vertical-align: middle;
+      outline: none;
+      cursor: pointer;
       width: 1.8rem;
       height: 1.8rem;
-      
+      position:absolute;
+      top: 0.5rem;
+      right: 0.8rem;
       border: none;
       background: url(../img/icon-search1.png) no-repeat ;
-      opacity: 0.5;
+      opacity: 0.5; 
     }
     
-    & input[type="submit"]:hover {
+    & .search-button:hover {
+      
+      cursor: pointer;
+      
       opacity: 1;
     }
 }
@@ -276,52 +275,76 @@ body {
   
 ----------------------------------------------------------------------------- */
 
+/* -----------------------------------------------------------------------------
 
+               index-content
+  
+----------------------------------------------------------------------------- */
+.index-content {
+  color:white;
+  height: 10rem;
+  outline: 1px solid green;
+  & .left, .mid, .right {
+    border: 1px solid red;
+    height: 5rem;
+    margin-bottom: 1rem;
+    & .inner {
+      height:1rem;
+    }
+  }
+}
+
+.row-inner div{
+  height:1rem;
+  outline: 1px solid green;
+}
 /* -----------------------------------------------------------------------------
 
              FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
-footer, .push {
-  //outline: 1px solid red;
-	height: $footer-height; /* '.push' must be the same height as 'footer' */
-}
-
-.footer {
-  padding: 0.5rem 0;
-  //border: 5px solid gold;
-  
-  position: relative;
-  
-  
+body .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: $footer-height;
-  //box-shadow: 0 -1px 0 $footer-bg__color;  //------------- two-striped border above the footer
-  //border-top: 1px solid #181f31;           //------------- two-striped border above the footer
+  padding: 0.5rem 0;
   background-color: $footer-bg__color;
   color: $font-small__color;
-  & .copyright {
-    outline: 1px solid blue;
-    display: inline-block;
-    top:0;
-    bottom:0;
-    position: absolute;
-    margin: auto;
-    height: 1em;
-    & p {
-      margin: 0;
-    }
-  }
-  
 }
+
+.footer .copyright {
+  outline: 1px solid blue;
+  display: inline-block;
+  top:0;
+  bottom:0;
+  position: absolute;
+  margin: auto;
+  height: 1em;
+  & p {
+    margin: 0;
+  }
+}
+
+.block-rel {
+  position: relative;
+}
+
 
 .row-bottom {
   height: $footer-height + 0.2rem;
   background: $footer-bg__color;
-  min-width: $main-container-width ;
+ 
   box-shadow: 0 -1px 0 $footer-bg__color;  //------------- two-striped border above the footer
   border-top: 1px solid #181f31;
 }
 
+.rg {
+  color: red;
+  display: inline-block;
+  position: absolute;
+  right:0;
+}
 /* -----------------------------------------------------------------------------
 
                                SLIDER
@@ -329,7 +352,7 @@ footer, .push {
 ----------------------------------------------------------------------------- */
 
 
-.wrapper-slider {
+.slider-box {
   border: 1rem solid white;
   
   //overflow: hidden;
@@ -342,6 +365,7 @@ footer, .push {
 
 
 .slider {
+  background-color: #1e222b;
   position: relative;
   outline: 2px solid green;
   max-height: 32rem;
@@ -365,8 +389,8 @@ footer, .push {
   width: 100%;
   display: block;
 
-  animation: imgShow 0.5s;
-  -webkit-animation: imgShow 0.5s ease-in-out;
+  animation: imgShow 0.3s;
+  -webkit-animation: imgShow 0.3s ;
 }
 
 
