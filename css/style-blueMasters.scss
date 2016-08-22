@@ -566,8 +566,9 @@ body {
 }
 
 .slider img.active {
+  display: block;
   position: relative;
-  //right: 0;
+  right: 0;
 }
 
 .slider img {
@@ -609,6 +610,7 @@ body {
   //z-index: 1;
   width: 100%;
   display: block;
+  position: relative;
 
   animation: showSlide 0.5s  forwards;
   -webkit-animation: showSlide 0.5s  forwards ;
@@ -619,6 +621,7 @@ body {
   //z-index: 1;
   width: 100%;
   display: block;
+  position: relative;
 
   animation: showSlideRight 0.5s forwards;
   -webkit-animation: showSlideRight 0.5s forwards ;

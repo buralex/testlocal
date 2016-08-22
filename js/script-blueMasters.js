@@ -12,18 +12,21 @@ var carousel = (function(){
     var images = slider.querySelectorAll("img");
     var bullets = slider.querySelectorAll(".controls i");
     var counter = 0;
-    //var counterBull = 0;
     var currentImg = images[0];
     var currentBull = bullets[0];
-  
+    
+
 
     function navigate(direction) {
-         
-        currentImg.classList.remove("hideImage"); 
-        currentImg.classList.remove("hideImageRight");
+ 
         currentImg.classList.remove("showImage"); 
         currentImg.classList.remove("showImageRight");// remove show class
-        currentBull.classList.remove("bullet-active");
+        
+        if (direction !=0) {
+            currentBull.classList.remove("bullet-active");
+            currentImg.classList.remove("active");
+        }
+        
         
         counter = counter + direction;
     
@@ -35,28 +38,35 @@ var carousel = (function(){
             counter > images.length - 1) { 
             counter = 0;
         }
+         
         
         
-        if (direction === 1 || direction === 0) {   
+        if (direction === 1 && direction != 0) {   
             currentBull = bullets[counter];
-            //currentImg.classList.remove("active");
+            
             currentBull.classList.add("bullet-active");
+            
+            currentImg.classList.add("hideImage");
+            
             currentImg = images[counter];
-            var imgPrev = images[counter - 1];
-            if (counter == 0) {imgPrev = images[images.length - 1];}  // reset to first image
 
-            imgPrev.classList.add("hideImage");
+            currentImg.classList.remove("hideImage");
+            currentImg.classList.remove("hideImageRight");
             currentImg.classList.add("showImage");
             
-        } else if (direction === -1) {
+            
+        } else if (direction === -1 && direction != 0) {
             currentBull = bullets[counter];
             currentBull.classList.add("bullet-active");
-            currentImg = images[counter];
-            var imgNext = images[counter + 1] ;
-            if (counter == images.length - 1) {imgNext = images[0];}  // reset to last image
             
-            imgNext.classList.add("hideImageRight");
+            currentImg.classList.add("hideImageRight");
+            
+            currentImg = images[counter];
+
+            currentImg.classList.remove("hideImageRight");
+            currentImg.classList.remove("hideImage");
             currentImg.classList.add("showImageRight");
+            
         }
     
     }
@@ -69,6 +79,13 @@ var carousel = (function(){
     });
   
   /*----------------------------- BULLETS for slider-----------------------------------*/
+    
+    function toggleBullet() {
+        for (var i = 0; i < bullets.length; i++ ) {
+            handleClick( bullets[i], i)
+        }
+    }
+    
     function handleClick(currElem, currentindex) {
         currElem.addEventListener("click", toggleImgByBullet);
     
@@ -80,18 +97,46 @@ var carousel = (function(){
             currentBull.classList.remove("bullet-active");   // disable class on global variables
             currElem.classList.add("bullet-active");
             currentBull = bullets[currentindex];  
-                                                          // to global variable assign current index
-            images[currentindex].classList.add("showImage");
             
-            currentImg = images[currentindex];       // to global variable assign current index
+             
+            if (currentindex > counter && counter != currentindex ) {
+                 
+                images[0].classList.remove("active");  //  for first image
+                
+                images[currentindex].classList.remove("hideImage");
+                images[currentindex].classList.remove("hideImageRight");
+                images[currentindex].classList.add("showImage");
+                
+                
+                currentImg.classList.remove("active");
+                currentImg.classList.add("hideImage"); 
+                
+                currentImg = images[currentindex];    // to global variable assign current index
+                counter = currentindex;
+                
+            } else if (currentindex < counter && counter != currentindex) {
+                
+                images[0].classList.remove("active");  //  for first image
+                
+                images[currentindex].classList.remove("hideImageRight");
+                images[currentindex].classList.remove("hideImage");
+                images[currentindex].classList.add("showImageRight");
+                
+                currentImg.classList.remove("active");
+                currentImg.classList.add("hideImageRight"); 
+                
+                currentImg = images[currentindex];    // to global variable assign current index
+                counter = currentindex;
+                console.log( counter);
+            } else {
+                images[currentindex].classList.add("active");
+            }
+                               
+                                                       
         }
     }
   
-    function toggleBullet() {
-        for (var i = 0; i < bullets.length; i++ ) {
-            handleClick( bullets[i], i)
-        }
-    }
+    
     
    // window.setInterval(function() { navigate(1);}, 5000);  // ------------- set interval
 navigate(0);

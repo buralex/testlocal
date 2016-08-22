@@ -389,7 +389,9 @@ body {
   max-height: 320px; }
 
 .slider img.active {
-  position: relative; }
+  display: block;
+  position: relative;
+  right: 0; }
 
 .slider img {
   position: absolute;
@@ -417,12 +419,14 @@ body {
 .slider img.showImage {
   width: 100%;
   display: block;
+  position: relative;
   animation: showSlide 0.5s  forwards;
   -webkit-animation: showSlide 0.5s forwards; }
 
 .slider img.showImageRight {
   width: 100%;
   display: block;
+  position: relative;
   animation: showSlideRight 0.5s forwards;
   -webkit-animation: showSlideRight 0.5s forwards; }
 
