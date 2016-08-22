@@ -4,6 +4,7 @@
                                SLIDER
   
 ----------------------------------------------------------------------------- */
+ "use strict";
  
 var carousel = (function(){
     var slider = document.querySelector(".slider");
@@ -11,20 +12,24 @@ var carousel = (function(){
     var prev = slider.querySelector(".prev");
     var images = slider.querySelectorAll("img");
     var bullets = slider.querySelectorAll(".controls i");
+    var showClass = "showImage";            // class for showing from right to left
+    var hideClass = "hideImage";            // class for hiding from right to left
+    var showClassRight = "showImageRight";  // class for showing from left to right
+    var hideClassRight = "hideImageRight";  // class for hiding from left to right
+    var activeClass = "active";             // class for the first image or if toggle twice on one bullet
+    var activeBullClass = "bullet-active";  // class for active bullet
     var counter = 0;
     var currentImg = images[0];
     var currentBull = bullets[0];
-    
-
 
     function navigate(direction) {
  
-        currentImg.classList.remove("showImage"); 
-        currentImg.classList.remove("showImageRight");// remove show class
+        currentImg.classList.remove(showClass); 
+        currentImg.classList.remove(showClassRight);// remove show class
         
         if (direction !=0) {
-            currentBull.classList.remove("bullet-active");
-            currentImg.classList.remove("active");
+            currentBull.classList.remove(activeBullClass);
+            currentImg.classList.remove(activeClass);
         }
         
         
@@ -44,28 +49,28 @@ var carousel = (function(){
         if (direction === 1 && direction != 0) {   
             currentBull = bullets[counter];
             
-            currentBull.classList.add("bullet-active");
+            currentBull.classList.add(activeBullClass);
             
-            currentImg.classList.add("hideImage");
+            currentImg.classList.add(hideClass);
             
             currentImg = images[counter];
 
-            currentImg.classList.remove("hideImage");
-            currentImg.classList.remove("hideImageRight");
-            currentImg.classList.add("showImage");
+            currentImg.classList.remove(hideClass);
+            currentImg.classList.remove(hideClassRight);
+            currentImg.classList.add(showClass);
             
             
         } else if (direction === -1 && direction != 0) {
             currentBull = bullets[counter];
-            currentBull.classList.add("bullet-active");
+            currentBull.classList.add(activeBullClass);
             
-            currentImg.classList.add("hideImageRight");
+            currentImg.classList.add(hideClassRight);
             
             currentImg = images[counter];
 
-            currentImg.classList.remove("hideImageRight");
-            currentImg.classList.remove("hideImage");
-            currentImg.classList.add("showImageRight");
+            currentImg.classList.remove(hideClassRight);
+            currentImg.classList.remove(hideClass);
+            currentImg.classList.add(showClassRight);
             
         }
     
@@ -90,46 +95,46 @@ var carousel = (function(){
         currElem.addEventListener("click", toggleImgByBullet);
     
         function toggleImgByBullet() {
-            currentImg.classList.remove("hideImage"); 
-            currentImg.classList.remove("hideImageRight");
-            currentImg.classList.remove("showImage");
-            currentImg.classList.remove("showImageRight");    //  disable class on global variables
-            currentBull.classList.remove("bullet-active");   // disable class on global variables
-            currElem.classList.add("bullet-active");
+            currentImg.classList.remove(hideClass); 
+            currentImg.classList.remove(hideClassRight);
+            currentImg.classList.remove(showClass);
+            currentImg.classList.remove(showClassRight);    //  disable class on global variables
+            currentBull.classList.remove(activeBullClass);   // disable class on global variables
+            currElem.classList.add(activeBullClass);
             currentBull = bullets[currentindex];  
             
              
             if (currentindex > counter && counter != currentindex ) {
                  
-                images[0].classList.remove("active");  //  for first image
+                images[0].classList.remove(activeClass);  //  for first image
                 
-                images[currentindex].classList.remove("hideImage");
-                images[currentindex].classList.remove("hideImageRight");
-                images[currentindex].classList.add("showImage");
+                images[currentindex].classList.remove(hideClass);
+                images[currentindex].classList.remove(hideClassRight);
+                images[currentindex].classList.add(showClass);
                 
                 
-                currentImg.classList.remove("active");
-                currentImg.classList.add("hideImage"); 
+                currentImg.classList.remove(activeClass);
+                currentImg.classList.add(hideClass); 
                 
                 currentImg = images[currentindex];    // to global variable assign current index
                 counter = currentindex;
                 
             } else if (currentindex < counter && counter != currentindex) {
                 
-                images[0].classList.remove("active");  //  for first image
+                images[0].classList.remove(activeClass);  //  for first image
                 
-                images[currentindex].classList.remove("hideImageRight");
-                images[currentindex].classList.remove("hideImage");
-                images[currentindex].classList.add("showImageRight");
+                images[currentindex].classList.remove(hideClassRight);
+                images[currentindex].classList.remove(hideClass);
+                images[currentindex].classList.add(showClassRight);
                 
-                currentImg.classList.remove("active");
-                currentImg.classList.add("hideImageRight"); 
+                currentImg.classList.remove(activeClass);
+                currentImg.classList.add(hideClassRight); 
                 
                 currentImg = images[currentindex];    // to global variable assign current index
                 counter = currentindex;
                 console.log( counter);
             } else {
-                images[currentindex].classList.add("active");
+                images[currentindex].classList.add(activeClass);
             }
                                
                                                        
