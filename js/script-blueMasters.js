@@ -6,12 +6,13 @@
 ----------------------------------------------------------------------------- */
  "use strict";
  
-var carousel = (function(){
+function carousel() {
     var slider = document.querySelector(".slider");
-    var next = slider.querySelector(".next");
-    var prev = slider.querySelector(".prev");
-    var images = slider.querySelectorAll("img");
-    var bullets = slider.querySelectorAll(".controls i");
+    var next = document.querySelector(".slider .next");
+    var prev = document.querySelector(".slider .prev");
+    var images = document.querySelectorAll(".slider img");
+    var bullets = document.querySelectorAll(".controls i");
+    var bulletsBox = document.querySelector(".controls");
     var showClass = "showImage";            // class for showing from right to left
     var hideClass = "hideImage";            // class for hiding from right to left
     var showClassRight = "showImageRight";  // class for showing from left to right
@@ -140,16 +141,48 @@ var carousel = (function(){
                                                        
         }
     }
-  
+                       //-------- set interval
+    //var sliderTimer = setInterval(function() { navigate(1);}, 5000);
+    //slider.onmouseover = function(){clearInterval(sliderTimer)};
+    //slider.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 5000);};
+    //bulletsBox.onmouseover = function(){clearInterval(sliderTimer)};
+    //bulletsBox.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 5000);};
     
-    
-   // window.setInterval(function() { navigate(1);}, 5000);  // ------------- set interval
 navigate(0);
 toggleBullet();
 
 
-})();
+};
 
+/* -----------------------------------------------------------------------------
+
+                               EQUAL COLUMNS
+  
+----------------------------------------------------------------------------- */
+
+function setEqualHeight(columns) {
+	
+    function calcHeight() {
+        var tallestColumn = 0;
+                                // getting array of div columns
+    	var columnsSelector = document.querySelectorAll(columns); 
+                                // getting height for each div
+        for (var i = 0; i < columnsSelector.length; ++i) { 
+            var item = columnsSelector[i];
+                item.style.minHeight = "initial" ;
+            var currentHeight = parseInt(getComputedStyle(item).height);
+            
+            if (currentHeight > tallestColumn) tallestColumn = currentHeight;
+        }
+                                // assigning height for each div
+        for (var i = 0; i < columnsSelector.length; ++i) {
+            var item = columnsSelector[i];
+           	    item.style.minHeight = tallestColumn + "px";
+            }
+    }
+    calcHeight();
+    window.addEventListener("resize", calcHeight);
+}
 
 /* -----------------------------------------------------------------------------
 

@@ -29,8 +29,10 @@
     
   </head>
   <body>
+    <!--  main-header -->
     <div class="main-header">
       <div class="main-container block-rel header-wrap ">
+        
         <div class="main-header__subscription ">
           <span class="hidden-xs">Subscribe to: &nbsp;</span>
           <a href="#"> Posts </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
@@ -38,7 +40,14 @@
           <a href="#"> Email </a>
         </div>
         
+        <div class="main-header__social">
+          <a href="rss"></a>
+          <a href="http://www.facebook.com/"></a>
+          <a href="http://twitter.com/"></a>
+        </div>
+        
         <button type=button class="drop-btn__search"></button>
+        
         <div class="main-header__search">
           <form action=" " method=" " class="search-form">
         	  <input type="search" name="search" placeholder="search keywords"  id="search-field" class="search-field" >
@@ -46,53 +55,135 @@
           </form>
         </div>
       </div>
-    </div> <!-- main-header -->
+    </div> 
+    <!-- end main-header -->
     
     <div class="strip"></div>
     
     <div class="cont-fluid main-container block-rel ">
+      <!-- main-logo -->
       <div class="sm-4 block-rel main-logo__container">
-        <img class="main-logo"  src="img/logo.png" alt="BlueMasters" width="275" height="56"></img>
+        <img class="main-logo"  src="img/logo.png" title="BlueMasters" alt="BlueMasters" width="275" height="56"></img>
         <button type=button class="drop-btn__nav">Menu</button>
       </div>
+      <!-- end main-logo -->
       
+      <!-- main-nav -->
       <nav class="main-nav sm-8 ">
         <ul class="main-nav__content text-right ">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
       </nav>
+      <!-- end main-nav -->
     </div>
     
+    <!-- slider-box -->
     <div class="slider-box">
-        <div class="slider">
-        	<img src="img/scene1.jpg" alt=" " width="930" height="320" class="active " />
-        	<img src="img/scene2.jpg" alt=" " width="930" height="320" class="" />
-        	<img src="img/scene3.jpg" alt=" " width="930" height="320" class="" />
-        	<img src="img/scene4.jpg" alt=" " width="930" height="320" class="" />
-        	<img src="img/scene5.jpg" alt=" " width="930" height="320" class="" />
+        
+        	<ul class="slider">
+        	  <li>
+        	    <img src="img/scene1.jpg" alt=" " width="930" height="320" class="active " />
+            	<figcaption> 
+            	  A cute cat 
+              </figcaption>
+        	  </li>
+        	  <li>
+        	    <img src="img/scene2.jpg" alt=" " width="930" height="320" class="" /> 
+        	    <figcaption> 
+            	  A cute cat 
+              </figcaption>
+        	  </li>
+        	  <li>
+        	      <img src="img/scene3.jpg" alt=" " width="930" height="320" class="" />
+        	      <figcaption> 
+            	  A cute cat 
+              </figcaption>
+        	  </li>
+        	  <li>
+        	     <img src="img/scene4.jpg" alt=" " width="930" height="320" class="" />
+        	     <figcaption> 
+            	  A gdagdfgdfgdfsgdfs 
+              </figcaption>
+        	  </li>
+        	  <li>
+        	     <img src="img/scene5.jpg" alt=" " width="930" height="320" class="" />
+        	     <figcaption> 
+            	  fdfdsfafdas
+              </figcaption>
+        	  </li>
+        	  
+        	  <button class="prev">&#60;</button>
+            <button class="next">&#62;</button>
+        	</ul>
+        	
           
-          <button class="prev">&#60;</button>
-          <button class="next">&#62;</button>
+        
+    </div> 
+    <!-- end slider-box --> 
+    
+    <div class="controls main-container">
+      <i class="bullet-active"></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    
+    
+    <div class="content cont-fluid main-container ">
+      
+      <!-- index-content -->
+      <div class="index-content text-center">
+        
+        <section class="index-content__about ssm-6 sm-4 md-4 outl-blue text-left">
+          <h3 class="sec-name">About iPadMasters</h3>
+          <article>
+            <img src="img/about.png" alt="photo" width="249" height="86"></img>
+            <h4>All About iPad Masters</h4>
+            <p>Lorem ipsum dolor sit amet, consect&shy;etur adipiscing elit. Praesent tempor facilisis congue. Lorem sum dolor sit amet, consectetur adippend...</p>
+          </article>
+        </section>
+      
+        <section class="index-content__blog ssm-6 sm-4 md-4 outl-red text-left">
+          <h3 class="sec-name">Our Blog Updates</h3>
+          <article>
+            <img src="img/blog.png" alt="photo" width="249" height="86"></img>
+            <h4>My First Website Creation</h4>
+            <p class="post-date">Posted in <a href="#">Web Design</a> on April 13th, 2010</p>
+            <p>Lorem ipsum dolor sit amet, consect&shy;etur adipiscing elit. Praesent tempor facilisis congue. Lorem sum dolor sit amet, consectetur adippend...</p>
+          </article>
+        </section>
           
-          <div class="controls">
-            <i class="bullet-active"></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
+        <section class="index-content__contact ssm-6 sm-4 md-4 outl-green text-left">
+          <h3 class="sec-name">Get In Touch</h3>
+          <div class="numbers">
+            <ul>
+              <li><a href="tel:7777777777"><span>phone</span><br>1+ (123) 4564789</a></li>
+              <li><a href="mailto:youremailaddress"><span>email</span><br>hello@yourdomain.com</a></li>
+              <li><a href="skype:skypename?chat"><span>skype</span><br>yourskypename</a></li>
+              <li><a href=""><span>other request</span><br>Try our contact form</a></li>
+            </ul>
           </div>
-        </div>
-    </div> <!-- slider-box -->
-    
-    
-    
-
-    
-    
+  
+          <div class="social">
+            <a href="http://twitter.com/"></a>
+            <a href="http://www.facebook.com/"></a>
+            <a href="http://www.flickr.com/"></a>
+            <a href="https://www.linkedin.com/"></a>
+            <a href="https://www.tumblr.com/"></a>
+            <a href="http://www.youtube.com/"></a>
+          </div>
+          
+          
+        </section>  
+      </div>
+      <!-- end index-content -->
+    </div> 
+ 
     <footer class="footer ">
       <div class="main-container block-rel footer-wrap">
         <div class="copyright">
@@ -122,52 +213,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     
     <script src="js/script-blueMasters.js"></script>
-    <script src="js/unslider-min.js"></script>
-    <script >
-      $('#checkbox').change(function(){
-    setInterval(function () {
-        moveRight();
-    }, 3000);
-  });
-  
-	var slideCount = $('#slider ul li').length;
-	var slideWidth = $('#slider ul li').width();
-	var slideHeight = $('#slider ul li').height();
-	var sliderUlWidth = slideCount * slideWidth;
-	
-	$('#slider').css({ width: slideWidth, height: slideHeight });
-	
-	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
-    $('#slider ul li:last-child').prependTo('#slider ul');
-
-    function moveLeft() {
-        $('#slider ul').animate({
-            left: + slideWidth
-        }, 2000, function () {
-            $('#slider ul li:last-child').prependTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
-
-    function moveRight() {
-        $('#slider ul').animate({
-            left: - slideWidth
-        }, 2000, function () {
-            $('#slider ul li:first-child').appendTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
-
-    $('a.control_prev').click(function () {
-        moveLeft();
-    });
-
-    $('a.control_next').click(function () {
-        moveRight();
-    });
-			
-		
+   
+    <script>
+       carousel();
+       setEqualHeight(".index-content > section");
     </script>
+    
   </body>
 </html>
