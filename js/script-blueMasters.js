@@ -10,7 +10,7 @@ function carousel() {
     var slider = document.querySelector(".slider");
     var next = document.querySelector(".slider .next");
     var prev = document.querySelector(".slider .prev");
-    var images = document.querySelectorAll(".slider img");
+    var sliderItems = document.querySelectorAll(".slider li");
     var bullets = document.querySelectorAll(".controls i");
     var bulletsBox = document.querySelector(".controls");
     var showClass = "showImage";            // class for showing from right to left
@@ -20,7 +20,7 @@ function carousel() {
     var activeClass = "active";             // class for the first image or if toggle twice on one bullet
     var activeBullClass = "bullet-active";  // class for active bullet
     var counter = 0;
-    var currentImg = images[0];
+    var currentImg = sliderItems[0];
     var currentBull = bullets[0];
 
     function navigate(direction) {
@@ -38,10 +38,10 @@ function carousel() {
     
         if (direction === -1 && 
             counter < 0) { 
-            counter = images.length - 1; 
+            counter = sliderItems.length - 1; 
         }
         if (direction === 1 && 
-            counter > images.length - 1) { 
+            counter > sliderItems.length - 1) { 
             counter = 0;
         }
          
@@ -54,7 +54,7 @@ function carousel() {
             
             currentImg.classList.add(hideClass);
             
-            currentImg = images[counter];
+            currentImg = sliderItems[counter];
 
             currentImg.classList.remove(hideClass);
             currentImg.classList.remove(hideClassRight);
@@ -67,7 +67,7 @@ function carousel() {
             
             currentImg.classList.add(hideClassRight);
             
-            currentImg = images[counter];
+            currentImg = sliderItems[counter];
 
             currentImg.classList.remove(hideClassRight);
             currentImg.classList.remove(hideClass);
@@ -107,46 +107,46 @@ function carousel() {
              
             if (currentindex > counter && counter != currentindex ) {
                  
-                images[0].classList.remove(activeClass);  //  for first image
+                sliderItems[0].classList.remove(activeClass);  //  for first image
                 
-                images[currentindex].classList.remove(hideClass);
-                images[currentindex].classList.remove(hideClassRight);
-                images[currentindex].classList.add(showClass);
+                sliderItems[currentindex].classList.remove(hideClass);
+                sliderItems[currentindex].classList.remove(hideClassRight);
+                sliderItems[currentindex].classList.add(showClass);
                 
                 
                 currentImg.classList.remove(activeClass);
                 currentImg.classList.add(hideClass); 
                 
-                currentImg = images[currentindex];    // to global variable assign current index
+                currentImg = sliderItems[currentindex];    // to global variable assign current index
                 counter = currentindex;
                 
             } else if (currentindex < counter && counter != currentindex) {
                 
-                images[0].classList.remove(activeClass);  //  for first image
+                sliderItems[0].classList.remove(activeClass);  //  for first image
                 
-                images[currentindex].classList.remove(hideClassRight);
-                images[currentindex].classList.remove(hideClass);
-                images[currentindex].classList.add(showClassRight);
+                sliderItems[currentindex].classList.remove(hideClassRight);
+                sliderItems[currentindex].classList.remove(hideClass);
+                sliderItems[currentindex].classList.add(showClassRight);
                 
                 currentImg.classList.remove(activeClass);
                 currentImg.classList.add(hideClassRight); 
                 
-                currentImg = images[currentindex];    // to global variable assign current index
+                currentImg = sliderItems[currentindex];    // to global variable assign current index
                 counter = currentindex;
                 console.log( counter);
             } else {
-                images[currentindex].classList.add(activeClass);
+                sliderItems[currentindex].classList.add(activeClass);
             }
                                
                                                        
         }
     }
                        //-------- set interval
-    //var sliderTimer = setInterval(function() { navigate(1);}, 5000);
-    //slider.onmouseover = function(){clearInterval(sliderTimer)};
-    //slider.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 5000);};
-    //bulletsBox.onmouseover = function(){clearInterval(sliderTimer)};
-    //bulletsBox.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 5000);};
+    var sliderTimer = setInterval(function() { navigate(1);}, 6000);
+    slider.onmouseover = function(){clearInterval(sliderTimer)};
+    slider.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 6000);};
+    bulletsBox.onmouseover = function(){clearInterval(sliderTimer)};
+    bulletsBox.onmouseout = function(){sliderTimer = setInterval(function() { navigate(1);}, 6000);};
     
 navigate(0);
 toggleBullet();

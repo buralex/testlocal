@@ -29,49 +29,60 @@
     
   </head>
   <body>
-    <div class="main-header">
-      <div class="main-container block-rel header-wrap ">
-        <div class="main-header__subscription ">
-          <span class="hidden-xs">Subscribe to: &nbsp;</span>
-          <a href="#"> Posts </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          <a href="#"> Comments </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          <a href="#"> Email </a>
+    
+    <div class="main-wrap">
+      <!--  main-header -->
+      <header class="main-header">
+        <div class="main-container block-rel header-wrap ">
+          
+          <div class="main-header__subscription ">
+            <span class="hidden-xs">Subscribe to: &nbsp;</span>
+            <a href="#"> Posts </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="#"> Comments </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="#"> Email </a>
+          </div>
+          
+          <div class="main-header__social">
+            <a href="rss"></a>
+            <a href="http://www.facebook.com/"></a>
+            <a href="http://twitter.com/"></a>
+          </div>
+          
+          <button type=button class="drop-btn__search"></button>
+          
+          <div class="main-header__search">
+            <form action=" " method=" " class="search-form">
+          	  <input type="search" name="search" placeholder="search keywords"  id="search-field" class="search-field" >
+          	  <input type="submit" name=" " value=" "  class="search-button" >
+            </form>
+          </div>
         </div>
+      </header> <!-- end main-header -->
+      <div class="strip"></div>
+      
+      
+      <div class="cont-fluid main-container block-rel ">
+        <!-- main-logo -->
+        <div class="sm-4 block-rel main-logo__container">
+          <img class="main-logo"  src="img/logo.png" title="BlueMasters" alt="BlueMasters" width="275" height="56"></img>
+          <button type=button class="drop-btn__nav">Menu</button>
+        </div>
+        <!-- end main-logo -->
         
-        <button type=button class="drop-btn__search"></button>
-        <div class="main-header__search">
-          <form action=" " method=" " class="search-form">
-        	  <input type="search" name="search" placeholder="search keywords"  id="search-field" class="search-field" >
-        	  <input type="submit" name=" " value=" "  class="search-button" >
-          </form>
-        </div>
+        <!-- main-nav -->
+        <nav class="main-nav sm-8 ">
+          <ul class="main-nav__content text-right ">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- end main-nav -->
       </div>
-    </div> <!-- main-header -->
+    </div> <!--end main-wrap-->
     
-    <div class="strip"></div>
-    
-    <div class="cont-fluid main-container block-rel ">
-      <div class="sm-4 block-rel main-logo__container">
-        <img class="main-logo"  src="img/logo.png" alt="BlueMasters" width="275" height="56"></img>
-        <button type=button class="drop-btn__nav">Menu</button>
-      </div>
-      
-      <nav class="main-nav sm-8 ">
-        <ul class="main-nav__content text-right ">
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-      </nav>
-    </div>
-    
-    <div class="content" id="content">
-      
-    </div>
- 
- 
     <footer class="footer ">
       <div class="main-container block-rel footer-wrap">
         <div class="copyright">
@@ -101,7 +112,16 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     
     <script src="js/script-blueMasters.js"></script>
-
+   
+    <script>
+       carousel();
+       
+       var indexCont = setEqualHeight;
+       indexCont(".index-content > section");
+       
+       var upperFooter = setEqualHeight;
+       upperFooter(".upper-footer .main-container > div");
+    </script>
     
   </body>
 </html>

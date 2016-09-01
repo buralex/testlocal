@@ -52,7 +52,15 @@
   /*padding-left: 15px;*/
   /*padding-right: 15px;*/
 }
-
+.cont-inline {                /*just container for inline blocks without spaces between columns*/
+  font-family: "zero-width";
+  font-size: 0;
+}
+.col-inline {
+  vertical-align: top;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
 
 .row-inner {
   margin-right: auto;
