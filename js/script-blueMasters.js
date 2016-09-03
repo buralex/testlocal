@@ -4,21 +4,21 @@
                                SLIDER
   
 ----------------------------------------------------------------------------- */
- "use strict";
+ 'use strict';
  
 function carousel() {
-    var slider = document.querySelector(".slider");
-    var next = document.querySelector(".slider .next");
-    var prev = document.querySelector(".slider .prev");
-    var sliderItems = document.querySelectorAll(".slider li");
-    var bullets = document.querySelectorAll(".controls i");
-    var bulletsBox = document.querySelector(".controls");
-    var showClass = "showImage";            // class for showing from right to left
-    var hideClass = "hideImage";            // class for hiding from right to left
-    var showClassRight = "showImageRight";  // class for showing from left to right
-    var hideClassRight = "hideImageRight";  // class for hiding from left to right
-    var activeClass = "active";             // class for the first image or if toggle twice on one bullet
-    var activeBullClass = "bullet-active";  // class for active bullet
+    var slider = document.querySelector('.slider');
+    var next = document.querySelector('.slider .next');
+    var prev = document.querySelector('.slider .prev');
+    var sliderItems = document.querySelectorAll('.slider li');
+    var bullets = document.querySelectorAll('.controls i');
+    var bulletsBox = document.querySelector('.controls');
+    var showClass = 'showImage';            // class for showing from right to left
+    var hideClass = 'hideImage';            // class for hiding from right to left
+    var showClassRight = 'showImageRight';  // class for showing from left to right
+    var hideClassRight = 'hideImageRight';  // class for hiding from left to right
+    var activeClass = 'active';             // class for the first image or if toggle twice on one bullet
+    var activeBullClass = 'bullet-active';  // class for active bullet
     var counter = 0;
     var currentImg = sliderItems[0];
     var currentBull = bullets[0];
@@ -77,10 +77,10 @@ function carousel() {
     
     }
   
-    next.addEventListener("click", function(ev) {    //assigning events for the buttons
+    next.addEventListener('click', function(ev) {    //assigning events for the buttons
     navigate(1);
     });
-    prev.addEventListener("click", function(ev) {
+    prev.addEventListener('click', function(ev) {
     navigate(-1);
     });
   
@@ -91,9 +91,9 @@ function carousel() {
             handleClick( bullets[i], i)
         }
     }
-    
+   
     function handleClick(currElem, currentindex) {
-        currElem.addEventListener("click", toggleImgByBullet);
+        currElem.addEventListener('click', toggleImgByBullet);
     
         function toggleImgByBullet() {
             currentImg.classList.remove(hideClass); 
@@ -169,7 +169,7 @@ function setEqualHeight(columns) {
                                 // getting height for each div
         for (var i = 0; i < columnsSelector.length; ++i) { 
             var item = columnsSelector[i];
-                item.style.minHeight = "initial" ;
+                item.style.minHeight = 'initial' ;
             var currentHeight = parseInt(getComputedStyle(item).height);
             
             if (currentHeight > tallestColumn) tallestColumn = currentHeight;
@@ -177,11 +177,11 @@ function setEqualHeight(columns) {
                                 // assigning height for each div
         for (var i = 0; i < columnsSelector.length; ++i) {
             var item = columnsSelector[i];
-           	    item.style.minHeight = tallestColumn + "px";
+           	    item.style.minHeight = tallestColumn + 'px';
             }
     }
     calcHeight();
-    window.addEventListener("resize", calcHeight);
+    window.addEventListener('resize', calcHeight);
 }
 
 /* -----------------------------------------------------------------------------
@@ -191,18 +191,18 @@ function setEqualHeight(columns) {
 ----------------------------------------------------------------------------- */
  
 var dropDownSearch = (function(){
-        document.querySelector(".drop-btn__search").addEventListener("click", drop);
+        document.querySelector('.drop-btn__search').addEventListener('click', drop);
         function drop() {
-            document.querySelector(".main-header__search ").classList.toggle("dropped");
-            document.querySelector(".main-header__subscription ").classList.toggle("hidden");
+            document.querySelector('.main-header__search ').classList.toggle('dropped');
+            document.querySelector('.main-header__subscription ').classList.toggle('hidden');
         }
 
 })();
 
 var dropDownNav = (function(){
-        document.querySelector(".drop-btn__nav").addEventListener("click", drop);
+        document.querySelector('.drop-btn__nav').addEventListener('click', drop);
         function drop() {
-            document.querySelector(".main-nav").classList.toggle("dropped");
+            document.querySelector('.main-nav').classList.toggle('dropped');
         }
 
 })();

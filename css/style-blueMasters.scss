@@ -4,10 +4,10 @@
  
 ----------------------------------------------------------------------------- */
 @font-face {
-	font-family: "nevis Bold";
-	src: url("../fonts/nevis_bold/nevis_bold.eot");
-	src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
+	font-family: 'nevis Bold';
+	src: url('../fonts/nevis_bold/nevis_bold.eot');
+	src: url('../fonts/nevis_bold/nevis_bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/nevis_bold/nevis_bold.ttf') format('truetype');
 	font-style: normal;
 	font-weight: normal;
 }
@@ -32,9 +32,9 @@
   
 ----------------------------------------------------------------------------- */
 
-$font-small: 1.1rem "Verdana", sans-serif;
-$font-main-nav: bold 1.8rem "Arial", sans-serif;
-$font-content: "Arial", sans-serif;
+$font-small: 1.1rem 'Verdana', sans-serif;
+$font-main-nav: bold 1.8rem 'Arial', sans-serif;
+$font-content: 'Arial', sans-serif;
 $font-main-nav__color: #7a8090;
 $font-small__color: #6a87a3;
 $font-footer__color: #6a7796;
@@ -230,7 +230,7 @@ html {
 
 .clearfix {
   &::before, &::after {
-    content: " ";
+    content: ' ';
     display: table;
     clear: both;
   }
@@ -276,6 +276,7 @@ body {
 }
 
 .main-container {
+  position: relative;
   max-width: $main-container-width;
   margin-right: auto;
   margin-left: auto;
@@ -440,7 +441,7 @@ body {
   &::after {
     height: 18px;
     width: 18px;
-    content:"";
+    content:'';
     display: block;
     background: #0d0e0e url(../img/icon-search1.png) 100% 50% no-repeat ;
     opacity: 0.5;
@@ -484,7 +485,7 @@ body {
   padding: 8px 0 0 0;
   margin: 0;
   list-style: none;
-  font-family: "zero-width";
+  font-family: 'zero-width';
   font-size: 0;
     li {
       display: inline-block;
@@ -587,7 +588,7 @@ h4 {
     background-image: -webkit-linear-gradient(bottom, rgb(46,56,80) , rgb(74,85,109));
     
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 10px;
@@ -675,7 +676,7 @@ section.index-content__blog article {
     text-decoration: none;
     text-transform: none;
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 1px;
@@ -763,7 +764,7 @@ section.index-content__blog article {
 
 /* -----------------------------------------------------------------------------
 
-             FOOTER        (styles for sticky footer  are in "root elements")
+             FOOTER        (styles for sticky footer  are in 'root elements')
   
 ----------------------------------------------------------------------------- */
 
@@ -879,186 +880,92 @@ section.index-content__blog article {
   
 ----------------------------------------------------------------------------- */
 
+/* --------------------------------- base styles -------------------------*/
+ 
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .flexslider .slides {
+  display: block;
+}
+* html .flexslider .slides {
+  height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+  display: block;
+}
 
-.slider-box {
-  border: 10px solid #fff;
-  overflow: hidden;
-  max-height: 340px;
-  margin: 20px auto 0 auto;
+/*---------------------------- custom styles ---------------------------------*/
+
+
+.flexslider .slides > li {
   position: relative;
 }
 
-
-.slider {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: block;
-  background-color: #1e222b;
-  position: relative;
-  //max-width: 940px;
-  //max-height: 320px;
-  
-  figcaption {
+.flex-caption {
     width: 100%;
+    margin: 0;
     padding: 10px 10px 10px 50px;
     display: block;
     color: #fff;
     background: rgba(29, 32, 42, 0.3);
     position: absolute;
     bottom: 0;
+    
+    p {
+      margin: 0;
+    }
+    
     a {
       font: 1.4rem/1.4 Verdana, Helvetica, sans-serif;;
       color: #fff;
       text-decoration: none;
     }
+}
+
+
+
+.slider-box {
+  border: 10px solid #fff;
+  margin: 20px auto 0 auto;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    img {
+      height: auto;
+      width: 100%;
+      display: block;
+    }
   }
-}
-
-.slider li.active {
-  display: block;
-  position: relative;
-  right: 0;
-}
-
-.slider li {
-  position: absolute;
-  right: 100%;
-  top: 0%;
-  height: auto;
-  width: 100%;
-  display: block;
-}
-
-.slider img {
-  height: auto;
-  width: 100%;
-  display: block;
-}
-
-
-.slider li.hideImage {
-  width: 100%;
-  display: block;
   
-  -webkit-animation: hideSlide 0.5s ;
-  animation: hideSlide 0.5s ;
-}
+/*------------------------------ direction-nav -----------------------------*/
 
-.slider li.hideImageRight {
-  //opacity: 1;
-  width: 100%;
-  display: block;
-  
-  -webkit-animation: hideSlideRight 0.5s ;
-  animation: hideSlideRight 0.5s ;
-}
-
-.slider li.showImage {
-  //opacity: 1;
-  //z-index: 1;
-  width: 100%;
-  display: block;
-  position: relative;
-
-  
-  -webkit-animation: showSlide 0.5s  forwards ;
-  animation: showSlide 0.5s  forwards;
-}
-
-.slider li.showImageRight {
-  //opacity: 1;
-  //z-index: 1;
-  width: 100%;
-  display: block;
-  position: relative;
-
-  
-  -webkit-animation: showSlideRight 0.5s  forwards ;
-  animation: showSlideRight 0.5s  forwards;
-}
-
-@keyframes showSlide {
-   from{  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
-        }             
-   to{  -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-         }
-   }
-   
-@-webkit-keyframes showSlide {
-   from{  -webkit-transform: rotate(0deg);              // rotate for Safari
-          -webkit-transform: translateX(200%);
-          transform: translateX(200%);
-        }             
-   to{  -webkit-transform: rotate(0deg);
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-         }
-   }
-   
-@keyframes showSlideRight {
-   from{  -webkit-transform: translateX(0);
-          transform: translateX(0);
-        }             
-   to{  -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-         }
-   }
-   
-@-webkit-keyframes showSlideRight {
-   from{  -webkit-transform: rotate(0deg);              // rotate for Safari
-          -webkit-transform: translateX(0);
-          transform: translateX(0);
-        }             
-   to{  -webkit-transform: rotate(0deg);
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-         }
-   }
-
-@keyframes hideSlide {
-   from{  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-        }             
-   to{  -webkit-transform: translateX(0);
-            transform: translateX(0);
-         }
-   }
-   
-@-webkit-keyframes hideSlide {
-   from{  -webkit-transform: rotate(0deg);              // rotate for Safari
-          -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-        }             
-   to{  -webkit-transform: rotate(0deg);
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-         }
-   }
-   
-@keyframes hideSlideRight {
-   from{  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-        }             
-   to{  -webkit-transform: translateX(0);
-            transform: translateX(200%);
-         }
-   }
-   
-@-webkit-keyframes hideSlideRight {
-   from{  -webkit-transform: rotate(0deg);              // rotate for Safari
-          -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-        }             
-   to{  -webkit-transform: rotate(0deg);
-            -webkit-transform: translateX(200%);
-            transform: translateX(200%);
-         }
-   }
-
-.next, .prev {
+.flex-next, .flex-prev {
+  cursor: pointer;
   z-index: 999;
   outline: none;
   position: absolute;
@@ -1073,24 +980,26 @@ section.index-content__blog article {
   padding: 15px;
 }
 
-.slider button:hover {
+.flexslider button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.next {
+.flex-next {
   right: 0;
   background: -webkit-linear-gradient(right, #212121 , rgba(0, 0, 0, 0));
   background:         linear-gradient(to left, #212121 , rgba(0, 0, 0, 0));
   opacity: 0.4;
 }
 
-.prev {
+.flex-prev {
   left: 0;
   background: -webkit-linear-gradient(left, #212121 , rgba(0, 0, 0, 0));
   background:         linear-gradient(to right, #212121 , rgba(0, 0, 0, 0));
   opacity: 0.4;
 }
+
+/*------------------------------ controls-nav -------------------------------*/
 
 .controls {
   min-height: 43px;
@@ -1099,10 +1008,21 @@ section.index-content__blog article {
   padding-top: 9px;
   background: url(../img/shadow.png) 50% -6px no-repeat;
   background-size: 100% 100%;
+  
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
 
-.controls i {
+.flex-control-nav li {
   margin: 0 3px;
+  display: inline-block;
+  zoom: 1;
+}
+
+.flex-control-paging li a {
   background: -webkit-linear-gradient( bottom, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
   background:         linear-gradient( to top, rgb(46,56,80) 0%, rgb(74,85,109) 100%);
   cursor: pointer;
@@ -1110,17 +1030,16 @@ section.index-content__blog article {
   height: 14px;
   width: 14px;
   border-radius: 50% ;
-  //border: 2px solid gray;
-}
-
-.controls i.bullet-active {
-  background: -webkit-linear-gradient( bottom, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
-  background:         linear-gradient( to top, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
+  text-indent: -9999px !important;
+  
+  &.flex-active {
+    background: -webkit-linear-gradient( bottom, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
+    background:         linear-gradient( to top, rgb(41,123,170) 0%, rgb(93,180,220) 100%);
+  }
 }
 
 /* -----------------------------------------------------------------------------
 
-                               ABOUT-CONTENT
+                               SLIDER-NEW
   
 ----------------------------------------------------------------------------- */
-
