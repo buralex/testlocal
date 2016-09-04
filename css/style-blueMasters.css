@@ -30,15 +30,8 @@
 
 ----------------------------------------------------------------------------- */
 @media (max-width: 543px) {
-  div.main-header__social {
-    right: 13% !important; }
-
-  /*------------------------- SEARCH-media -------------------------------*/
-  .main-header .main-header__search {
-    display: none; }
-
-  .main-header .drop-btn__search {
-    display: inline-block; }
+  .main-header__subscription, .main-header__social {
+    text-align: center; }
 
   /*------------------------- MAIN-NAV-media -------------------------------*/
   .main-logo {
@@ -47,27 +40,11 @@
 
   /*------------------------- SLIDER-media -------------------------------*/
   .slider-box {
-    border: 5px solid #fff !important; }
-
-  /*------------------------- FOOTER-media -------------------------------*/
-  body {
-    margin-bottom: 90px !important; }
-
-  footer.footer {
-    min-height: 90px; }
-
-  .copyright {
-    font-size: 1.1rem;
-    margin-bottom: 3px; }
-
-  .footer__nav-content li {
-    font-size: 1.2rem !important; } }
+    border: 5px solid #fff !important; } }
 @media (max-width: 767px) {
-  .main-header div.main-header__social {
-    right: 39%; }
-
   /*------------------------- MAIN-NAV-media -------------------------------*/
   nav.main-nav {
+    width: auto;
     z-index: 1000;
     position: absolute;
     right: 0;
@@ -89,19 +66,9 @@
     display: inline-block; } }
 @media (max-width: 991px) {
   /*------------------------- FOOTER-media -------------------------------*/
-  .footer {
-    text-align: center; }
-
-  .copyright, .footer__nav {
-    width: 100%;
-    display: inline-block;
-    -webkit-transform: translateY(0) !important;
-    transform: translateY(0) !important;
-    position: static !important;
-    margin-bottom: 5px; }
-
-  div.main-header__social {
-    right: 30%; } }
+  footer .copyright, footer .footer__nav {
+    text-align: center;
+    padding: 5px 0; } }
 /*------------------- IE10+ CSS styles go here -------------------------------*/
 /*------------------- Safari 5.1-6.0 only. CSS styles go here -------------------------------*/
 /* -----------------------------------------------------------------------------
@@ -143,15 +110,9 @@ html {
   min-height: 100%; }
 
 body {
-  margin-bottom: 60px;
-  /* the bottom margin is the value of the footer's height */
   background: #1e222b;
   background: url(../img/bgPat.png), -webkit-linear-gradient(top, #1e222b, #333949) fixed;
   background: url(../img/bgPat.png), linear-gradient(to bottom, #1e222b, #333949) fixed; }
-
-.main-wrap {
-  min-height: 100%;
-  padding-bottom: 60px; }
 
 .main-container {
   position: relative;
@@ -174,18 +135,12 @@ body {
   background: #18191a;
   background: -webkit-linear-gradient(bottom, #0f0f0f, #373a3e);
   background: linear-gradient(to top, #0f0f0f, #373a3e);
-  position: relative;
-  height: 52px; }
-
-.header-wrap {
-  min-height: 100%; }
+  position: relative; }
 
 .main-header__subscription {
+  vertical-align: middle;
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  padding: 10px 0;
   font: 1.1rem "Verdana", sans-serif;
   color: #6a87a3; }
   .main-header__subscription span {
@@ -198,13 +153,10 @@ body {
 
 .main-header__social {
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: 22%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  vertical-align: middle;
+  padding: 10px 0; }
   .main-header__social a {
-    margin-right: 6px;
+    margin-right: 10px;
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -222,13 +174,10 @@ body {
 
 /*----------------------------- search form ---------------------------------*/
 .main-header__search {
+  padding: 10px 0;
   display: inline-block;
   vertical-align: middle;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 10px;
+  position: relative;
   /* Firefox 19+ */
   /* Firefox 18- */ }
   .main-header__search.dropped {
@@ -244,9 +193,9 @@ body {
     width: 195px;
     border: none;
     border-radius: 10px;
-    box-shadow: inset 0 -1px 0 #292d30; }
+    box-shadow: inset 0 -1px 0 #405870; }
   .main-header__search .search-field:focus {
-    box-shadow: 0px 0px 10px #415263; }
+    box-shadow: 0px 0px 10px #87bdf3; }
   .main-header__search .search-field::-webkit-input-placeholder {
     color: #38444f; }
   .main-header__search .search-field::-moz-placeholder {
@@ -261,39 +210,12 @@ body {
     width: 18px;
     height: 18px;
     position: absolute;
-    top: 5px;
+    top: 15px;
     right: 8px;
     border: none;
     background: url(../img/icon-search1.png) 100% 50% no-repeat;
     opacity: 0.5; }
   .main-header__search .search-button:hover {
-    cursor: pointer;
-    opacity: 1; }
-
-.drop-btn__search {
-  outline: none;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: inline-block;
-  vertical-align: middle;
-  height: 30px;
-  width: 30px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: inset 0 -1px 0 #292d30;
-  background: #0d0e0e;
-  display: none; }
-  .drop-btn__search::after {
-    height: 18px;
-    width: 18px;
-    content: '';
-    display: block;
-    background: #0d0e0e url(../img/icon-search1.png) 100% 50% no-repeat;
-    opacity: 0.5; }
-  .drop-btn__search:hover::after {
     cursor: pointer;
     opacity: 1; }
 
@@ -306,7 +228,6 @@ body {
   outline: none;
   position: absolute;
   right: 0;
-  display: inline-block;
   vertical-align: middle;
   padding: 8px 16px 8px 16px;
   border-radius: 5px;
@@ -322,9 +243,7 @@ body {
 .main-nav__content {
   padding: 8px 0 0 0;
   margin: 0;
-  list-style: none;
-  font-family: 'zero-width';
-  font-size: 0; }
+  list-style: none; }
   .main-nav__content li {
     display: inline-block;
     font: bold 1.8rem "Arial", sans-serif; }
@@ -502,7 +421,7 @@ section.index-content__blog article .post-date > a {
   background: rgba(24, 27, 36, 0.6);
   padding: 25px; }
   .index-content__contact .social a {
-    margin-right: 6px;
+    margin-right: 10px;
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -531,7 +450,7 @@ section.index-content__blog article .post-date > a {
 ----------------------------------------------------------------------------- */
 .upper-footer {
   background-color: #0f131f;
-  padding: 35px 0 30px 0; }
+  padding: 0 0 30px 0; }
   .upper-footer h2 {
     margin: 0 0 20px 0;
     color: #8c94ac; }
@@ -545,6 +464,13 @@ section.index-content__blog article .post-date > a {
     color: #606574; }
     .upper-footer a:hover {
       text-decoration: underline; }
+
+.upper-footer__about,
+.upper-footer__categories,
+.upper-footer__gallery,
+.upper-footer__updates {
+  margin-top: 35px;
+  padding-right: 20px; }
 
 .upper-footer__categories span {
   color: #9da4b8; }
@@ -561,44 +487,56 @@ section.index-content__blog article .post-date > a {
     padding: 5px;
     width: auto; }
 
-.footer-wrap {
-  min-height: 100%; }
+.twit-comment {
+  font: 1.2rem/1.6 Verdana, Helvetica, sans-serif;
+  color: #417893;
+  background-color: rgba(117, 136, 187, 0.102);
+  padding: 15px 10px;
+  border-radius: 10px;
+  position: relative; }
+  .twit-comment::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 17px 0px;
+    border-color: transparent transparent rgba(117, 136, 187, 0.102) transparent; }
+  .twit-comment a {
+    color: #b8e2f6; }
+  .twit-comment .comment-time, .twit-comment .comment-time a {
+    font-size: 1.1rem; }
 
-.footer {
+/*-------------------------------------- footer ------------------------------*/
+.footer-container {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 60px;
-  padding: 5px 0;
+  width: 100%; }
+
+.footer {
   background-color: #040507;
-  color: #6a7796;
-  font: 1.1rem "Verdana", sans-serif;
   box-shadow: 0 -1px 0 #040507;
   border-top: 1px solid #181f31; }
 
-.copyright {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.footer__nav {
-  display: inline-block;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
+.copyright, .footer__nav {
+  vertical-align: middle;
+  padding: 23px 0 26px;
+  font: 1.1rem "Verdana", sans-serif;
+  line-height: 1.9;
+  color: #6a7796; }
 
 .footer__nav-content {
   padding: 0;
   margin: 0;
-  list-style: none; }
+  list-style: none;
+  font: 1.1rem "Verdana", sans-serif;
+  line-height: 1.9;
+  color: #6a7796; }
   .footer__nav-content li {
-    display: inline-block;
-    font: 1.1rem "Verdana", sans-serif;
-    color: #6a7796; }
+    display: inline-block; }
   .footer__nav-content a {
     display: inline-block;
     text-decoration: none;
@@ -621,6 +559,8 @@ section.index-content__blog article .post-date > a {
   -webkit-backface-visibility: hidden; }
 
 .flexslider .slides img {
+  height: auto;
+  /*necessary*/
   width: 100%;
   display: block; }
 
