@@ -7,7 +7,21 @@
 
  'use strict';
  
+ /* -----------------------------------------------------------------------------
 
+                               DEBOUNCE
+  
+----------------------------------------------------------------------------- */
+ 
+function debounce(fn, delay) {
+  var t
+  return function () {
+    clearTimeout(t)
+    t = setTimeout(fn, delay)
+  }
+}
+
+ 
 /* -----------------------------------------------------------------------------
 
                                EQUAL COLUMNS
@@ -34,8 +48,10 @@ function setEqualHeight(columns) {
            	    item.style.minHeight = tallestColumn + 'px';
             }
     }
-    calcHeight();
-    window.addEventListener('resize', calcHeight);
+    
+   //calcHeight();
+   window.addEventListener("load", calcHeight);
+   window.addEventListener('resize', debounce(function() { calcHeight() }, 100));
 }
 
 /* -----------------------------------------------------------------------------
@@ -45,15 +61,32 @@ function setEqualHeight(columns) {
 ----------------------------------------------------------------------------- */
 
 function stickyFooter(footerContainer) {
-	
     function stick() {
-        var footer = document.querySelector(footerContainer);
-        var footerHeight = parseInt(getComputedStyle(footer).height);
-        document.body.style.marginBottom = footerHeight + 'px';
-    }
+        var bodyHeight = parseInt(getComputedStyle(document.querySelector('body')).height);
+        var windHeight = Math.max( document.documentElement.clientHeight, window.innerHeight || 0 );
+
+       /* if ( bodyHeight < windHeight) {
+           document.querySelector(footerContainer).style.top = (windHeight - bodyHeight) + 'px'; 
+ 
+        } else {
+           document.querySelector(footerContainer).style.top = 0 + 'px';
+          }*/
     
-    stick();
-    window.addEventListener('resize', stick);
+        var move = windHeight - bodyHeight;
+        if (move > 0) {
+            document.querySelector(footerContainer).style.top = move + 'px';
+            
+        } else {
+            document.querySelector(footerContainer).style.top = 0 + 'px';
+        }
+    }
+
+   
+   //window.addEventListener("load", stick);
+   stick();
+   //window.addEventListener('resize',  stick);
+   window.addEventListener('resize', debounce(function() { stick() }, 400));
+   
 }
 
 /* -----------------------------------------------------------------------------

@@ -194,12 +194,11 @@ html {
 
 html{
   font-size: 10px;
-  position: relative;  // for sticky footer
-  min-height: 100%;    // for sticky footer
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  //margin-bottom: ; /* the bottom margin is the value of the footer's height - gets with Javascript */
   background: #1e222b;
   background: url(../img/bgPat.png),
               -webkit-linear-gradient( top, #1e222b , #333949 )  fixed;
@@ -543,7 +542,7 @@ section.index-content__blog article {
 .index-content__contact  .numbers {
   background: rgba(24, 27, 36, 0.6);
   margin-bottom: 10px;
-  padding: 25px;
+  padding: 25px 25px 31px 25px;
   ul {
     margin: 0;
     padding: 0;
@@ -614,7 +613,7 @@ section.index-content__blog article {
     padding: 25px;
 
     a {
-      margin-right: 10px;
+      margin-right: 9px;
       display: inline-block;
       width: 32px;
       height: 32px;
@@ -654,6 +653,13 @@ section.index-content__blog article {
              FOOTER        (styles for sticky footer  are in 'root elements')
   
 ----------------------------------------------------------------------------- */
+
+.footer-container {
+  position: relative;
+  //position: absolute;
+  //bottom:0;
+  width: 100%;
+}
 
 .upper-footer {
   background-color: #0f131f;
@@ -731,6 +737,16 @@ section.index-content__blog article {
     border-width: 0 15px 17px 0px;
     border-color: transparent transparent rgba(117, 136, 187, 0.102) transparent;
   }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    right: 25px;
+    width: 43px;
+    height: 30px;
+    background-image: url(../img/bird.png);
+  }
   
   a {
     color: #b8e2f6;
@@ -743,11 +759,6 @@ section.index-content__blog article {
 
 /*-------------------------------------- footer ------------------------------*/
 
-.footer-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
 .footer {
   background-color: $footer-bg__color;
