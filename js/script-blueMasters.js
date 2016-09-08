@@ -61,13 +61,17 @@ function setEqualHeight(columns) {
 ----------------------------------------------------------------------------- */
 
 function stickyFooter(footerContainer, wrapCont) {
+    
     function stick() {
-        
-        var windHeight = Math.max( document.documentElement.clientHeight, window.innerHeight );
-        var footerHeight = parseInt(getComputedStyle(document.querySelector(footerContainer)).height);
-       
-        var expand = windHeight - footerHeight;
-        document.querySelector(wrapCont).style.minHeight = expand + 'px';
+            var windHeight = Math.max( document.documentElement.clientHeight, window.innerHeight );
+            var footerHeight = document.querySelector(footerContainer).offsetHeight;
+            var expand = windHeight - footerHeight;
+            
+            if (expand > 0 ) {
+                document.querySelector(wrapCont).style.minHeight = expand + 'px';
+             } else {
+                document.querySelector(wrapCont).style.minHeight = '';
+              }
     }
 
    debounce(function() { stick() }, 250)();
@@ -81,14 +85,14 @@ function stickyFooter(footerContainer, wrapCont) {
   
 ----------------------------------------------------------------------------- */
  
+    // droppClass write without dot
+function dropDownNav( dropBtn, nav, droppedClass) {  
+            document.querySelector(dropBtn).addEventListener('click', drop);
+            function drop() {
+                document.querySelector(nav).classList.toggle(droppedClass);
+            }
+}
 
-var dropDownNav = (function(){
-        document.querySelector('.drop-btn__nav').addEventListener('click', drop);
-        function drop() {
-            document.querySelector('.main-nav').classList.toggle('dropped');
-        }
-
-})();
 
 
 
