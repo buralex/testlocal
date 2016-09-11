@@ -86,6 +86,7 @@ function stickyFooter(footerContainer, wrapCont) {
 ----------------------------------------------------------------------------- */
  
     // droppClass write without dot
+    // nav can be any div
 function dropDownNav( dropBtn, nav, droppedClass) {  
             document.querySelector(dropBtn).addEventListener('click', drop);
             function drop() {
@@ -93,10 +94,24 @@ function dropDownNav( dropBtn, nav, droppedClass) {
             }
 }
 
+/* -----------------------------------------------------------------------------
 
+                               ACCORDION
+  
+----------------------------------------------------------------------------- */
 
+function accordion( buttton, activeBtnClass, dropDiv, dropClass) {  
+    var acc = document.querySelectorAll(buttton);
 
-
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            if(this.nextElementSibling.hasChildNodes())  {
+                this.classList.toggle(activeBtnClass);
+                this.nextElementSibling.classList.toggle(dropClass);
+            }
+        }
+    }
+}
 
 
 

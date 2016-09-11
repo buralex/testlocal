@@ -29,70 +29,153 @@
     
   </head>
   <body>
-    <div class="wrapper">
-    <!--  main-header -->
-    <header class='main-header'>
-      <div class='main-container cont-fluid'>
-        
-        <div class='main-header__subscription xs-12 ssm-5 sm-5 md-7 '>
-          <span class='hidden-xs'>Subscribe to: &nbsp;</span>
-          <a href='#'> Posts </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          <a href='#'> Comments </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          <a href='#'> Email </a>
-        </div>
-        
-        <div class='main-header__social xs-4 ssm-2 sm-3 md-2 text-right '>
-          <a href='rss'></a>
-          <a href='http://www.facebook.com/'></a>
-          <a href='http://twitter.com/'></a>
-        </div>
-        
-        <div class='main-header__search xs-8 ssm-5 sm-4 md-3 text-right '>
-          <form action='#' method='#' class='search-form'>
-        	  <input type='search' name='search' placeholder='search keywords'  id='search-field' class='search-field' >
-        	  <input type='submit' name=' ' value=' '  class='search-button' >
-          </form>
-        </div>
-        
-      </div>
-    </header> <!-- end main-header -->
-    
-    <div class='strip'></div>
-    
-    <!-- end logo and nav -->
-    <div class='cont-fluid main-container'>
+    <div class='wrapper'>
       
-      <div class='sm-4'>
-        <img class='main-logo'  src='img/logo.png' title='BlueMasters' alt='BlueMasters' width='275' height='56'>
-        <button type=button class='drop-btn__nav'>Menu</button>
-      </div> 
-
-      <!-- main-nav -->
-      <nav class='main-nav xs-10 sm-8 '>
-        <ul class='main-nav__content cont-inline text-right '>
-            <li><a href='index.html' >Home</a></li>
-            <li><a href='about.html' class='active'>About</a></li>
+      <!-- main-header -->
+      <header class='main-header'>
+        <div class='main-container cont-fluid'>
+          
+          <div class='main-header__subscription xs-12 ssm-5 sm-5 md-7 '>
+            <span class='hidden-xs'>Subscribe to: &nbsp;</span>
+            <a href='#'> Posts </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href='#'> Comments </a> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href='#'> Email </a>
+          </div>
+          
+          <div class='main-header__social xs-4 ssm-2 sm-3 md-2 text-right '>
+            <a href='rss'></a>
+            <a href='http://www.facebook.com/'></a>
+            <a href='http://twitter.com/'></a>
+          </div>
+          
+          <div class='main-header__search xs-8 ssm-5 sm-4 md-3 text-right '>
+            <form action='#' method='#' class='search-form'>
+          	  <input type='search' name='search' placeholder='search keywords'  id='search-field' class='search-field' >
+          	  <input type='submit' name=' ' value=' '  class='search-button' >
+            </form>
+          </div>
+          
+        </div>
+      </header> <!-- end main-header -->
+      
+      <div class='strip'></div>
+      
+      <!-- end logo and nav -->
+      <div class='cont-fluid main-container'>
+        
+        <div class='sm-4'>
+          <img class='main-logo'  src='img/logo.png' title='BlueMasters' alt='BlueMasters' width='275' height='56'>
+          <button type=button class='drop-btn__nav'>Menu</button>
+        </div> 
+  
+        <!-- main-nav -->
+        <nav class='main-nav xs-10 sm-8 '>
+          <ul class='main-nav__content cont-inline text-right '>
+            <li><a href='index.html'>Home</a></li>
+            <li class='dropdown-item'>
+              <a href='about.html' class='active'>About</a>
+              <ul class='drop-level-1'>
+                <li><a href='#'>About1</a></li>
+                <li class='dropdown-item-1'>
+                  <a href='#'>About2</a>
+                  <ul class='drop-level-2'>
+                    <li><a href='#'>About4</a></li>
+                    <li><a href='#'>About5</a></li>
+                    <li><a href='#'>About6</a></li>
+                  </ul>
+                </li>
+                <li><a href='#'>About3</a></li>
+              </ul>
+            </li>
             <li><a href='#'>Portfolio</a></li>
             <li><a href='#'>Blog</a></li>
             <li><a href='#'>Contact</a></li>
           </ul>
-      </nav> <!-- end main-nav -->
-    </div> <!-- end logo and nav -->
-    
-    
-    
-    
-    <div class='content main-container'>
+        </nav> <!-- end main-nav -->
+      </div> <!-- end logo and nav -->
       
-      <!-- about-content -->
-      
-       <!-- end about-content -->
-    </div> <!-- end content -->
-     
-    
-    <div class='content-bottom'></div>
+      <div class='main-container'>
+        <!-- content -->
+        <div class='content cont-fluid'>
+          
+          <!-- content__about -->
+          <div class='content__about xs-12 sm-9 outl-green'>
+            <h2>About</h2>
+            
+          </div> <!-- end content__about -->
+          
+          <!-- content__sidebar -->  
+          <aside class="content__sidebar xs-12 sm-3 outl-green">
+            <div class="welcome">
+              <h3>Welcome Guest!</h3>
+              <div class="welcome__text">
+                <img class='img-resp' src='img/sidebar-blog-main.png' title='Cross-Browser' alt='Cross-Browser' width='222' height='98'>
+                <p>Lorem ipsum dolor sit amet, consec&shy;tetur adipiscing elit. Nullam et risus non arcu porttitor feugi at in at neque. In hac habitasse platea dictumst. Proin pretium.</p>
+              </div>
+            </div>
+            
+            <!-- sidebar-nav -->
+            <div class="sidebar-nav">
+              <h3>Site Navigation</h3>
+              <div class="accordion-box">
+                <button class="accordion">Welcome Home</button>
+                <div class="panel">
+                  <a href="#">Some text</a>
+                </div>
+                <button class="accordion">About Us</button>
+                <div class="panel">
+                  <a href="#">About 1</a>
+                  <a href="#">About 2</a>
+                </div>
+                <button class="accordion">Our Portfolio</button>
+                <div class="panel"></div>
+                <button class="accordion">Blog News</button>
+                <div class="panel"></div>
+                <button class="accordion">Contact Us</button>
+                <div class="panel"></div>
+              </div>
+            </div> <!-- end sidebar-nav -->
+            
+            <div class="sidebar-categ">
+              <h3>Categories</h3>
+              <ul>
+                <li><a href='#'>Photography</a><span>&nbsp;(12)</span></li>
+                <li><a href='#'>Our Portfolio</a><span>&nbsp;(98)</span></li>
+                <li><a href='#'>Graphic Design</a><span>&nbsp;(234)</span></li>
+                <li><a href='#'>Web Designs</a><span>&nbsp;(4)</span></li>
+                <li><a href='#'>Web Developmen</a><span>&nbsp;(3)</span></li>
+                <li><a href='#'>Iconography</a><span>&nbsp;(16)</span></li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-blog">
+              <h3>Blog Archives</h3>
+              <ul>
+                <li><a href='#'>April 2010</a><span>&nbsp;(98)</span></li>
+                <li><a href='#'>February 2010</a><span>&nbsp;(2)</span></li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-social text-center">
+              <h3>Network Connect</h3>
+              <div class='social cont-inline'>
+                <a href='http://twitter.com/'></a>
+                <a href='http://www.facebook.com/'></a>
+                <a href='http://www.flickr.com/'></a>
+                <a href='https://www.linkedin.com/'></a>
+                <a href='https://www.tumblr.com/'></a>
+                <a href='http://www.youtube.com/'></a>
+              </div>
+            </div>
+            
+          </aside> <!-- end content__sidebar -->
+        </div> <!-- end content -->
+      </div>
+       
+      <div class='content-bottom'></div>
 
-    </div>
+    </div> <!-- end wrapper -->
+    
     <!-- footer-container -->
     <div id='footer-container' class='footer-container '>
       <div class='upper-footer '>
@@ -183,11 +266,14 @@
         var dropNav = dropDownNav;
         dropNav('.drop-btn__nav', '.main-nav', 'dropped');
         
+        var accord = accordion;
+        accord('button.accordion', 'active', 'div.panel', 'show')
+        
         var stickFoot = stickyFooter;
         stickFoot('.footer-container', '.wrapper');
         
-        var indexCont = setEqualHeight;
-        indexCont('.index-content > section');
+        var aboutCont = setEqualHeight;
+        aboutCont('.content > *');
          
         var upperFooter = setEqualHeight;
         upperFooter('.upper-footer .main-container > div');
@@ -198,8 +284,8 @@
           controlsContainer: '.controls',
           pauseOnHover: 1,
           pauseOnAction: 1,
-          useCSS: false
-					//slideshowSpeed: 1000
+          useCSS: false,
+					slideshowSpeed: 7000
         });
       });
        
