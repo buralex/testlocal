@@ -69,15 +69,60 @@ function stickyFooter(footerContainer, wrapCont) {
             
             if (expand > 0 ) {
                 document.querySelector(wrapCont).style.minHeight = expand + 'px';
-             } else {
+            } else {
                 document.querySelector(wrapCont).style.minHeight = '';
-              }
+            }
     }
 
    debounce(function() { stick() }, 250)();
    window.addEventListener('resize', debounce(function() { stick() }, 250));
    
 }
+
+/* -----------------------------------------------------------------------------
+
+                     STICKY SIDEBAR (with width in % and parent)
+  
+----------------------------------------------------------------------------- */
+// parent - nearest parent who has offset value from top of the page
+
+
+
+function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
+    
+    function calcWidth() {
+        var sidebar = document.querySelector(element);
+        var wrapDivwidth = parseInt(getComputedStyle(document.querySelector(wrapDiv)).width);
+        
+        var wrapDivOffTopPar = document.querySelector(wrapDiv).offsetTop;
+        //var offTopPar = document.querySelector(element).offsetTop; // offset from parent
+        var jumpPosition = document.querySelector(parent).offsetTop;
+    
+        function calcTop(argument) {
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (distanceY >= (jumpPosition + wrapDivOffTopPar)) {
+                sidebar.classList.add(fixedClass);
+                sidebar.style.width = wrapDivwidth + 'px';
+                
+                // the following code(1 line) is for specific occasion (not necessary)
+                document.querySelector('.welcome__text').classList.add('collapsed');
+                
+            } else if (distanceY <= (jumpPosition + wrapDivOffTopPar)){
+                if (sidebar.classList.contains(fixedClass)) {
+                    sidebar.classList.remove(fixedClass);
+                }   
+                sidebar.style.width = '';
+                // the following code(1 line) is for specific occasion (not necessary)
+                document.querySelector('.welcome__text').classList.remove('collapsed');
+            }
+        }
+        window.addEventListener('scroll', calcTop);
+    }
+    window.addEventListener('resize', debounce(function() { calcWidth() }, 250));
+    debounce(function() { calcWidth() }, 250)();
+}
+
 
 /* -----------------------------------------------------------------------------
 
