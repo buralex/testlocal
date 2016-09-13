@@ -73,7 +73,7 @@
           <ul class='main-nav__content cont-inline text-right '>
             <li><a href='index.html'>Home</a></li>
             <li class='dropdown-item'>
-              <a href='about.html' >About</a>
+              <a href='about.html' class='active'>About</a>
               <ul class='drop-level-1'>
                 <li><a href='#'>About1</a></li>
                 <li class='dropdown-item-1'>
@@ -87,14 +87,14 @@
                 <li><a href='#'>About3</a></li>
               </ul>
             </li>
-            <li><a href='#' class='active'>Portfolio</a></li>
+            <li><a href='#'>Portfolio</a></li>
             <li><a href='#'>Blog</a></li>
             <li><a href='#'>Contact</a></li>
           </ul>
         </nav> <!-- end main-nav -->
       </div> <!-- end logo and nav -->
       
-      <div class='content-top outl-green'></div>
+      <div class='content-top'></div>
       
       <div class='main-container jump-parent'>
         <!-- content -->
@@ -146,7 +146,7 @@
           
           <!-- content__sidebar -->  
           <div class="content__sidebar-box xs-24 sm-7">
-          <aside id='content__sidebar' class='content__sidebar  '>
+          <aside class='content__sidebar  '>
             <div class='welcome'>
               <h3>Welcome Guest!</h3>
               <div class='welcome__text'>
@@ -295,7 +295,6 @@
   
     <!-- jQuery  -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src='https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js'></script>
   
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     
@@ -306,11 +305,8 @@
     
       $(document).ready(function(){
         
-        //$(".content__sidebar-box").stick_in_parent();
-       // $(".content__sidebar").stick_in_parent();
-        
         var stickSide = stickySidebarPar;
-        //stickSide('.content__sidebar', '.jump-parent', '.content__sidebar-box', 'fixed');
+        stickSide('.content__sidebar', '.jump-parent', '.content__sidebar-box', 'fixed');
         
         var dropNav = dropDownNav;
         dropNav('.drop-btn__nav', '.main-nav', 'dropped');

@@ -561,9 +561,6 @@ h4 {
     font-style: italic; }
 
 /*----------------------- sidebar -----------------------*/
-.sidebar-box {
-  background-color: #fff; }
-
 .content__sidebar {
   background: #eef0f5;
   background-clip: content-box; }

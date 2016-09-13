@@ -51,7 +51,7 @@ function setEqualHeight(columns) {
             }
     }
     
-   //calcHeight();
+   calcHeight();
    window.addEventListener("load", calcHeight);
    window.addEventListener('resize', debounce(function() { calcHeight() }, 100));
 }
@@ -87,29 +87,30 @@ function stickyFooter(footerContainer, wrapCont) {
   
 ----------------------------------------------------------------------------- */
 // parent - nearest parent who has offset value from top of the page
-
+//wrapDiv - (static)div to calc width of sticky element(fixed)
+//offset between wrap and element = 0
 
 
 function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
     
     function calcWidth() {
         var sidebar = document.querySelector(element);
-        
-        
-        var wrapDivOffTopPar = document.querySelector(wrapDiv).offsetTop;
-        
-        var jumpPosition = document.querySelector(parent).offsetTop;
+        var wrapDivOffTopPar = document.querySelector(wrapDiv).offsetTop; //distance from parent to wrap  
+        var jumpPosition = document.querySelector(parent).offsetTop; //distance from top to parent
     
         function calcTop(argument) {
             var wrapDivwidth = parseFloat(getComputedStyle(document.querySelector(wrapDiv)).width);
             var distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
             if (distanceY >= (jumpPosition + wrapDivOffTopPar)) {
+                sidebar.style.width = wrapDivwidth + 'px';
+                
                 if (!sidebar.classList.contains(fixedClass)) {
                     sidebar.classList.add(fixedClass);
-                    sidebar.style.width = wrapDivwidth + 'px';
                 }
+                
             } else if (distanceY <= (jumpPosition + wrapDivOffTopPar)){
+                
                 if (sidebar.classList.contains(fixedClass)) {
                     sidebar.classList.remove(fixedClass);
                 }   
@@ -117,7 +118,6 @@ function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
             }
         }
         calcTop();
-        window.addEventListener('resize', calcTop);
     }
     calcWidth();
     window.addEventListener('resize', calcWidth);
