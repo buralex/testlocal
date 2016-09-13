@@ -45,6 +45,9 @@
   .slider-box {
     border: 5px solid #fff !important; } }
 @media (max-width: 767px) {
+  .content__sidebar.fixed {
+    position: relative !important; }
+
   /*------------------------- MAIN-NAV-media -------------------------------*/
   nav.main-nav {
     width: auto;
@@ -586,7 +589,9 @@ h4 {
 
 .content__sidebar.fixed {
   position: fixed;
-  top: 0; }
+  top: 0;
+  left: auto;
+  z-index: 10; }
 
 .welcome h3::before {
   background-position: -4px 0; }
@@ -596,9 +601,6 @@ h4 {
   color: #444955;
   padding: 20px;
   max-height: 500px; }
-.welcome .welcome__text.collapsed {
-  max-height: 0;
-  transition: 0.3s; }
 
 /*------------------- accordion ---------------------------*/
 .accordion-box {

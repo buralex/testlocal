@@ -54,6 +54,7 @@ $main-container-width: 980px;
 // Extra small devices (portrait phones, less than 544px)
 @media (max-width: 543px) {
   
+  
   .main-header__subscription, .main-header__social {
     text-align: center;
   }
@@ -78,6 +79,10 @@ $main-container-width: 980px;
 
 // Small devices (landscape phones, 544px and up)
 @media (max-width: 767px) {
+  
+   .content__sidebar.fixed {
+    position: relative !important;
+  }
 
    /*------------------------- MAIN-NAV-media -------------------------------*/
  
@@ -823,6 +828,8 @@ h4 {
 .content__sidebar.fixed {
   position: fixed;
   top: 0;
+  left: auto;
+  z-index: 10;
 }
 
 .welcome {
@@ -835,10 +842,6 @@ h4 {
     color: #444955;
     padding: 20px;
     max-height: 500px;
-  }
-  .welcome__text.collapsed {
-    max-height: 0;
-    transition: 0.3s;
   }
 }
 
