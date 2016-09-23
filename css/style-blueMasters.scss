@@ -74,14 +74,28 @@ $main-container-width: 980px;
     border: 5px solid #fff !important;
   }
 
+  /*------------------------- PORTFOLIO-media -------------------------------*/
+
+  ul.portfolio-pages {
+    margin: 10px;
+    
+    a {
+      padding: 10px;
+    }
+  }
+  
+  .portfolio-pagination div {
+    text-align: center;
+  }
+
 }
 
 
 // Small devices (landscape phones, 544px and up)
 @media (max-width: 767px) {
   
-   .content__sidebar.fixed {
-    position: relative !important;
+  .content__portfolio div:first-child, .content__portfolio div:first-child+div {
+    text-align: center ;
   }
 
    /*------------------------- MAIN-NAV-media -------------------------------*/
@@ -121,9 +135,20 @@ $main-container-width: 980px;
     
     li {
       font-size: 1.4rem;
-      opacity: 1;
+      opacity: 1 ;
     }
   }
+  
+  .dropdown-item:hover .drop-level-1,
+  .dropdown-item-1:hover .drop-level-2 {
+  
+    & > li {
+      opacity: 1 ;
+      -webkit-animation: none !important;
+      animation: none !important;
+    }
+  }
+  
   
   ul.drop-level-1 {
     padding-left: 30px;
@@ -465,15 +490,33 @@ body {
 .dropdown-item:hover .drop-level-1,
 .dropdown-item-1:hover .drop-level-2 {
   max-height: 500px;
-  transition: 1s 0.3s;
+  transition: 1s ;
   overflow: visible;
   
   & > li {
     opacity: 1;
-    transition: opacity 1s 0.3s;
+    -webkit-animation: show 1s ;
+    animation: show 1s ;
   }
 }
 
+@keyframes show {
+  from {  -webkit-opacity: 0;
+          opacity: 0;
+        }             
+  to {  -webkit-opacity: 1;
+        opacity: 1;
+      }
+  }
+   
+@-webkit-keyframes show {
+  from {  -webkit-opacity: 0;
+          opacity: 0;
+        }             
+  to {  -webkit-opacity: 1;
+        opacity: 1;
+      }
+  }
 
 
 
@@ -506,7 +549,7 @@ h4 {
   
 ----------------------------------------------------------------------------- */
 
-.btn-link {
+.btn-link, .btn-gallery, .btn-gallery-plus {
   display: inline-block;
   background-color: #11719f;
   padding: 14px 12px 14px 12px;
@@ -525,6 +568,37 @@ h4 {
   margin-left: 10px;
 }
 
+.btn-gallery {
+  padding: 8px 47px 8px 12px;
+}
+
+.btn-gallery-plus {
+  position: relative;
+  padding: 5px 16px 5px 16px;
+  background-color: #7e921e;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  vertical-align: top;
+  
+  &:hover {
+    background-color: lighten( #7e921e, 10% );
+  }
+}
+
+.btn-pagination {
+  padding: 10px 15px;
+  background-color: #4eabd7;
+  
+  &:hover {
+    background-color: #11719f;
+  }
+  
+  &.active {
+    background-color: #11719f;
+  }
+  
+}
+
 
 /* -----------------------------------------------------------------------------
 
@@ -541,8 +615,9 @@ h4 {
   background: rgba(23, 25, 32, 0.5);
 }
 
-.content.content-narrow {
-  padding: 20px 10px;
+.row-index {
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .content-bottom {
@@ -743,8 +818,7 @@ h4 {
                  CONTENT-ABOUT
   
 ----------------------------------------------------------------------------- */
-
-.content__about {
+.content__about, .content__blog {
   padding: 20px ;
   background: #fff;
   color: #444955;
@@ -755,23 +829,29 @@ h4 {
     color: #4d5467;
     padding: 0 0 7px 40px;
     margin: 0;
-    border-bottom: 1px dotted #84a1af;
     
     &::before {
       content: '';
       display: block;
       position: absolute;
-      top: -1px;
+      top: 2px;
       left: 5px;
       width: 24px;
       height: 24px;
       background-image: url(../img/main-icons.png);
       background-repeat: no-repeat;
-      background-position: -5px 1px;
+      background-position: -5px 0px;
     }
   }
+}
+
+
+.content__about, .content__blog, .content__contact {
+  h2 {
+    border-bottom: 1px dotted #84a1af;
+  }
   
-  img:first-of-type {
+  img.frame {
       border: 4px solid #eef0f5;
       box-shadow:  0 0 0 1px #ced1da;
       margin-top: 21px;
@@ -977,6 +1057,110 @@ div.panel.show {
 
 
 /*----------------------- end sidebar -----------------------*/
+
+
+/* -----------------------------------------------------------------------------
+
+                 CONTENT-PORTFOLIO
+  
+----------------------------------------------------------------------------- */
+
+.content__portfolio {
+  padding: 20px 20px 20px 20px;
+  background: #fff;
+  color: #444955;
+  font: 1.2rem/1.4 Verdana, Helvetica, sans-serif;
+  
+  h2 {
+    position: relative;
+    color: #4d5467;
+    padding: 0 0 7px 40px;
+    margin: 0;
+    
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 24px;
+      height: 24px;
+      background-image: url(../img/main-icons.png);
+      background-repeat: no-repeat;
+      background-position: -5px -53px;
+    }
+  }
+}
+
+.portfolio-gallery {
+  margin-top: 12px;   
+  
+  &  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .row-portfolio {
+    margin-left: -15px;
+    margin-right: -15px;
+    text-align: center;
+  }
+}
+
+.portfolio-gallery ul > li {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.portfolio-gallery ul > li > a {
+  max-height: 165px;
+  max-width: 190px;
+  border: 1px solid #ced1da;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    border: 4px solid #eef0f5;
+    width: 100%;
+    height: auto;
+    display: block;
+    
+    &:hover {
+      border: 4px solid darken( #eef0f5, 15% );;
+    }
+  }
+}
+
+.portfolio-pagination {
+  padding: 10px;
+  background-color: #eef0f5;
+  border: 1px solid #ced1da;
+}
+
+.portfolio-pages li {
+  display: inline-block; 
+  
+  &:not(:last-of-type) {
+    margin-right: 5px;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                 CONTENT-BLOG
+  
+----------------------------------------------------------------------------- */
+
+.content__blog {
+  
+  h2::before {
+    background-position: -5px -79px;
+  }
+}
+
 
 /* -----------------------------------------------------------------------------
 

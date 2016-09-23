@@ -63,13 +63,6 @@
   font-size: 1.2rem;
 }
 
-.row-inner {
-  margin-right: auto;
-  margin-left: auto;
-  font-family: "zero-width";
-  font-size: 0;
-}
-
 
 .row {
   margin-left: -15px;
@@ -1675,7 +1668,12 @@
   height: auto;
   display: block;
 }
-  
+
+.ul-clean {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 /*------------------- highlighting -------------------------*/
 
