@@ -5,7 +5,7 @@
 */  
 
 
- 'use strict';
+ "use strict";
  
  /* -----------------------------------------------------------------------------
 
@@ -37,8 +37,8 @@ function setEqualHeight(columns) {
                                 // getting height for each div
         for (var i = 0; i < columnsSelector.length; ++i) { 
             var item = columnsSelector[i];
-                item.style.minHeight = 'auto' ;
-                item.style.minHeight = 'initial' ;
+                item.style.minHeight = "auto" ;
+                item.style.minHeight = "initial" ;
                 
             var currentHeight = parseFloat(getComputedStyle(item).height);
             
@@ -47,13 +47,13 @@ function setEqualHeight(columns) {
                                 // assigning height for each div
         for (var i = 0; i < columnsSelector.length; ++i) {
             var item = columnsSelector[i];
-           	    item.style.minHeight = tallestColumn + 'px';
+           	    item.style.minHeight = tallestColumn + "px";
             }
     }
     
    calcHeight();
    window.addEventListener("load", calcHeight);
-   window.addEventListener('resize', debounce(function() { calcHeight() }, 100));
+   window.addEventListener("resize", debounce(function() { calcHeight() }, 100));
 }
 
 /* -----------------------------------------------------------------------------
@@ -70,14 +70,14 @@ function stickyFooter(footerContainer, wrapCont) {
             var expand = windHeight - footerHeight;
             
             if (expand > 0 ) {
-                document.querySelector(wrapCont).style.minHeight = expand + 'px';
+                document.querySelector(wrapCont).style.minHeight = expand + "px";
             } else {
-                document.querySelector(wrapCont).style.minHeight = '';
+                document.querySelector(wrapCont).style.minHeight = "";
             }
     }
 
    debounce(function() { stick() }, 250)();
-   window.addEventListener('resize', debounce(function() { stick() }, 250));
+   window.addEventListener("resize", debounce(function() { stick() }, 250));
    
 }
 
@@ -103,7 +103,7 @@ function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
             var distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
             if (distanceY >= (jumpPosition + wrapDivOffTopPar)) {
-                sidebar.style.width = wrapDivwidth + 'px';
+                sidebar.style.width = wrapDivwidth + "px";
                 
                 if (!sidebar.classList.contains(fixedClass)) {
                     sidebar.classList.add(fixedClass);
@@ -114,14 +114,14 @@ function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
                 if (sidebar.classList.contains(fixedClass)) {
                     sidebar.classList.remove(fixedClass);
                 }   
-                sidebar.style.width = '';
+                sidebar.style.width = "";
             }
         }
         calcTop();
     }
     calcWidth();
-    window.addEventListener('resize', calcWidth);
-    window.addEventListener('scroll', calcWidth);
+    window.addEventListener("resize", calcWidth);
+    window.addEventListener("scroll", calcWidth);
 }
 
 
@@ -134,7 +134,7 @@ function stickySidebarPar(element, parent, wrapDiv, fixedClass) {
     // droppClass write without dot
     // nav can be any div
 function dropDownNav( dropBtn, nav, droppedClass) {  
-            document.querySelector(dropBtn).addEventListener('click', drop);
+            document.querySelector(dropBtn).addEventListener("click", drop);
             function drop() {
                 document.querySelector(nav).classList.toggle(droppedClass);
             }

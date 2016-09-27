@@ -4,7 +4,7 @@
  
 ----------------------------------------------------------------------------- */
 @font-face {
-  font-family: 'nevis Bold';
+  font-family: "nevis Bold";
   src: url("../fonts/nevis_bold/nevis_bold.eot");
   src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
   font-style: normal;
@@ -129,7 +129,7 @@ html {
 
 ----------------------------------------------------------------------------- */
 .clearfix::before, .clearfix::after {
-  content: ' ';
+  content: " ";
   display: table;
   clear: both; }
 
@@ -375,7 +375,7 @@ h4 {
 .btn-link, .btn-gallery, .btn-gallery-plus {
   display: inline-block;
   background-color: #11719f;
-  padding: 14px 12px 14px 12px;
+  padding: 12px 12px 12px 12px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -407,6 +407,9 @@ h4 {
     background-color: #11719f; }
   .btn-pagination.active {
     background-color: #11719f; }
+
+.btn-send {
+  border: none; }
 
 /* -----------------------------------------------------------------------------
 
@@ -445,7 +448,7 @@ h4 {
     .index-about .sectn-name::before,
     .index-blog .sectn-name::before,
     .index-contact .sectn-name::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 10px;
@@ -498,49 +501,57 @@ h4 {
   background: rgba(24, 27, 36, 0.6);
   margin-bottom: 10px;
   padding: 25px 25px 31px 25px; }
-  .index-contact .numbers ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-  .index-contact .numbers li {
-    padding: 0 0 0 55px; }
-  .index-contact .numbers a {
-    margin: 0 0 18px 0;
-    display: inline-block;
-    position: relative;
-    color: #6a7796;
-    font-family: "Arial", sans-serif;
-    font-size: 1.4rem;
-    text-decoration: none;
-    text-transform: none; }
-    .index-contact .numbers a::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 1px;
-      left: -55px;
-      width: 32px;
-      height: 32px;
-      background-image: url(../img/social.png);
-      background-repeat: no-repeat; }
-  .index-contact .numbers a:hover {
-    color: #a6aec0; }
-  .index-contact .numbers li:nth-of-type(1) a::before {
-    background-position: -42px -37px; }
-  .index-contact .numbers li:nth-of-type(2) a::before {
-    background-position: -42px 0px; }
-  .index-contact .numbers li:nth-of-type(3) a::before {
+
+.sidebar-info .numbers {
+  padding: 0 20px 20px 20px; }
+  .sidebar-info .numbers a {
+    color: #444955; }
+  .sidebar-info .numbers span {
+    color: #444d68; }
+
+.numbers ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+.numbers li {
+  padding: 0 0 0 55px; }
+.numbers a {
+  margin: 0 0 18px 0;
+  display: inline-block;
+  position: relative;
+  color: #6a7796;
+  font-family: "Arial", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  text-transform: none; }
+  .numbers a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: -55px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/social.png);
+    background-repeat: no-repeat; }
+.numbers a:hover {
+  color: #a6aec0; }
+.numbers .phone::before {
+  background-position: -42px -37px; }
+.numbers .email::before {
+  background-position: -42px 0px; }
+.numbers .skype::before {
+  background-position: -79px -37px; }
+.numbers .other {
+  margin-bottom: 0; }
+  .numbers .other::before {
     background-position: -79px -37px; }
-  .index-contact .numbers li:last-child a {
-    margin-bottom: 0; }
-    .index-contact .numbers li:last-child a::before {
-      background-position: -79px -37px; }
-  .index-contact .numbers span {
-    text-transform: uppercase;
-    font-family: "Arial", sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #fff; }
+.numbers span {
+  text-transform: uppercase;
+  font-family: "Arial", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff; }
 
 .index-contact .social {
   background: rgba(24, 27, 36, 0.6);
@@ -573,18 +584,24 @@ h4 {
                  CONTENT-ABOUT
   
 ----------------------------------------------------------------------------- */
-.content__about, .content__blog {
+.content__about,
+.content__blog,
+.content__contact {
   padding: 20px;
   background: #fff;
   color: #444955;
   font: 1.2rem/1.4 Verdana, Helvetica, sans-serif; }
-  .content__about h2, .content__blog h2 {
+  .content__about h2,
+  .content__blog h2,
+  .content__contact h2 {
     position: relative;
     color: #4d5467;
     padding: 0 0 7px 40px;
     margin: 0; }
-    .content__about h2::before, .content__blog h2::before {
-      content: '';
+    .content__about h2::before,
+    .content__blog h2::before,
+    .content__contact h2::before {
+      content: "";
       display: block;
       position: absolute;
       top: 2px;
@@ -596,11 +613,11 @@ h4 {
       background-position: -5px 0px; }
 
 .content__about h2, .content__blog h2, .content__contact h2 {
-  border-bottom: 1px dotted #84a1af; }
+  border-bottom: 1px dotted #84a1af;
+  margin-bottom: 20px; }
 .content__about img.frame, .content__blog img.frame, .content__contact img.frame {
   border: 4px solid #eef0f5;
-  box-shadow: 0 0 0 1px #ced1da;
-  margin-top: 21px; }
+  box-shadow: 0 0 0 1px #ced1da; }
 .content__about p, .content__blog p, .content__contact p {
   text-align: justify;
   margin: 17px 0 17px 0;
@@ -627,7 +644,7 @@ h4 {
     background: #9097a9;
     color: #fff; }
     .content__sidebar h3::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 13px;
@@ -638,20 +655,16 @@ h4 {
       background-repeat: no-repeat;
       background-position: -4px -61px; }
 
-.content__sidebar.fixed {
-  position: fixed;
-  top: 0;
-  left: auto;
-  z-index: 10; }
-
 .welcome h3::before {
   background-position: -4px 0; }
-.welcome .welcome__text {
-  overflow: hidden;
+
+.welcome__text, .sidebar-info__text {
   font: 1.2rem/1.4 Verdana, Helvetica, sans-serif;
   color: #444955;
-  padding: 20px;
-  max-height: 500px; }
+  padding: 20px; }
+
+.sidebar-info h3::before {
+  background-position: -4px -92px; }
 
 /*------------------- accordion ---------------------------*/
 .accordion-box {
@@ -687,7 +700,7 @@ button.accordion.active, button.accordion:hover {
   color: #444d68; }
 
 button.accordion::after {
-  content: '';
+  content: "";
   float: right;
   margin: 4px 0 4px 0;
   width: 0;
@@ -770,7 +783,7 @@ div.panel.show {
     padding: 0 0 7px 40px;
     margin: 0; }
     .content__portfolio h2::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 2px;
@@ -812,7 +825,8 @@ div.panel.show {
     .portfolio-gallery ul > li > a img:hover {
       border: 4px solid #bec6d9; }
 
-.portfolio-pagination {
+.portfolio-pagination,
+.blog-pagination {
   padding: 10px;
   background-color: #eef0f5;
   border: 1px solid #ced1da; }
@@ -830,9 +844,63 @@ div.panel.show {
 .content__blog h2::before {
   background-position: -5px -79px; }
 
+.content__blog section {
+  border-bottom: 1px dotted #84a1af;
+  padding: 0 0 20px 0; }
+  .content__blog section h1 {
+    color: #1c8cb5;
+    margin: 0 0 0 0; }
+  .content__blog section .posted {
+    text-indent: 0;
+    margin: 0 0 18px 0;
+    font: 1.1rem/1.5 Verdana, Helvetica, sans-serif; }
+  .content__blog section .tags {
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .content__blog section .posted a,
+  .content__blog section .tags a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1b8bb4; }
+
 /* -----------------------------------------------------------------------------
 
-             FOOTER        (styles for sticky footer  are in 'root elements')
+                 CONTENT-CONTACT
+  
+----------------------------------------------------------------------------- */
+.content__contact h2::before {
+  background-position: -5px -25px; }
+
+.send-contact .personal-info {
+  border: none;
+  margin: 0;
+  padding: 0 20px 0 0; }
+.send-contact .map {
+  width: 100%;
+  margin: 7px 0 0 0;
+  padding: 5px;
+  border: 1px solid #ced1da; }
+.send-contact input:not([type="submit"]), .send-contact textarea {
+  width: 100%;
+  display: block;
+  margin: 7px 0 11px 0;
+  padding: 10px;
+  height: 42px;
+  border: 1px solid #ced1da;
+  background-color: #eef0f5;
+  font: 1.6rem/1.4 Verdana, Helvetica, sans-serif; }
+.send-contact input[type="submit"] {
+  float: right; }
+.send-contact textarea {
+  min-height: 275px; }
+.send-contact label {
+  font: bold 1.2rem/1.4 Verdana, Helvetica, sans-serif; }
+.send-contact .warn {
+  color: #f86756; }
+
+/* -----------------------------------------------------------------------------
+
+             FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
 .footer-container {
@@ -886,7 +954,7 @@ div.panel.show {
   border-radius: 10px;
   position: relative; }
   .twit-comment::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 100%;
@@ -897,7 +965,7 @@ div.panel.show {
     border-width: 0 15px 17px 0px;
     border-color: transparent transparent rgba(117, 136, 187, 0.102) transparent; }
   .twit-comment::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 100%;

@@ -73,7 +73,7 @@
           <ul class="main-nav__content cont-inline text-right ">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown-item">
-              <a href="about.html" class="active">About</a>
+              <a href="about.html">About</a>
               <ul class="drop-level-1">
                 <li><a href="#">About1</a></li>
                 <li class="dropdown-item-1">
@@ -89,7 +89,7 @@
             </li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
         </nav> <!-- end main-nav -->
       </div> <!-- end logo and nav -->
@@ -100,62 +100,75 @@
         <!-- content -->
         <div class="content cont-fluid">
           
-          <!-- content__about -->
-          <div class="content__about xs-24 sm-17 ">
-            <h2>About</h2>
-            <img class="img-resp frame"  src="img/about-scene.jpg" alt="beach" width="589" height="286">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et risus non arcu porttitor feugi
-              at in at neque. In hac habitasse platea dictumst. Proin pretium neque at turpis fermentum de
-              aliquet. Ut risus nisi, scelerisque in convallis et, volutpat malesuada elit. Ut nulla libero, condi
-              entum eget scelerisque eget, blandit sit amet metus. Suspendisse potenti. Nulla luctus temus 
-              augue dictum cursus. Curabitur non risus dui. In sit amet tellus in lacus fringilla condimentuma
-              t sit amet libero. Fusce purus ligula, hendrerit ut vulputate eget, vestibulum non diam. Vestib
-              ulum facilisis, leo id volutpat vestibulum, eros ligula ornare urna, pellentesque laoreet magna 
-              purus ac metus. Nulla facilisi.
+          <!-- content__contact -->
+          <div class="content__contact xs-24 sm-17 ">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum vehicula nisi ac vehic
+              ula. Fusce malesuada est id enim dignissim mattis. Phasellus id tellus nunc, in vehicula nisi. 
+              Fusce pellentesque, augue adipiscing sagittis tincidunt, mi magna sodales dolor, vitae ornare 
+              ipsum nunc et augue. Nulla sapien enim, rutrum sed pretium at, euismod sed augue. Vestibul
+              um quis nibh nisl, facilisis adipiscing massa. Aliquam erat volutpat.
             </p>
-            <p>
-              Mauris et risus nulla, at venenatis turpis. Duis egestas, elit eu imperdiet rhoncus, nulla mi tem
-              por dui, eu dignissim odio mi vitae quam. Ut at tempus diam. Quisque accumsan ullamcorper 
-              nisl, ut mollis orci suscipit in. Phasellus sagittis interdum nunc, ultrices rhoncus est accumsan 
-              id. Sed blandit cursus sapien. Phasellus lacus arcu, consequat non egestas eu, vestibulum eu 
-              turpis. Nunc ut tortor sed felis auctor tincidunt sed at arcu.
-            </p>
-            <blockquote>&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et risus non arc 
-              porttitentum dealiquet. Ut risus nisi, scelerisque in convallis et, volutpat ada elit.&#34;
-            </blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et risus non arcu porttitor feugi
-              at in at neque. In hac habitasse platea dictumst. Proin pretium neque at turpis fermentum de
-              aliquet. Ut risus nisi, scelerisque in convallis et, volutpat malesuada elit. Ut nulla libero, condi
-              entum eget scelerisque eget, blandit sit amet metus. Suspendisse potenti. Nulla luctus temus 
-              augue dictum cursus. Curabitur non risus dui. In sit amet tellus in lacus fringilla condimentuma
-              t sit amet libero. Fusce purus ligula, hendrerit ut vulputate eget, vestibulum non diam. Vestib
-              ulum facilisis, leo id volutpat vestibulum, eros ligula ornare urna, pellentesque laoreet magna 
-              purus ac metus. Nulla facilisi.
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et risus non arcu porttitor feugi
-              at in at neque. In hac habitasse platea dictumst. Proin pretium neque at turpis fermentum de
-              aliquet. Ut risus nisi, scelerisque in convallis et, volutpat malesuada elit. Ut nulla libero, condi
-              entum eget scelerisque eget, blandit sit amet metus. Suspendisse potenti. Nulla luctus temus 
-              augue dictum cursus. Curabitur non risus dui. In sit amet tellus in lacus fringilla condimentuma
-              t sit amet libero. Fusce purus ligula, hendrerit ut vulputate eget, vestibulum non diam. Vestib
-              ulum facilisis, leo id volutpat vestibulum, eros ligula. Lorem ipsum dolor sit amet, consectetur 
-              adipiscing elit. Nullam et risus non arcu porttitor feugi.
-            </p>
-
-          </div> <!-- end content__about -->
+            <!-- send-contact -->
+            <form class="send-contact" action="#" method="post">
+              <div class="cont-fluid">
+                <fieldset class="personal-info sm-12">
+                  <label>
+                    <span class="warn">*&nbsp;</span>Your Name:
+                    <input type="text" name="name" required>
+                  </label>
+                  
+                  <label>
+                    <span class="warn">*&nbsp;</span>Email Address:
+                    <input type="email" name="email" required>
+                  </label>
+                  
+                  <label>
+                    <span class="warn">*&nbsp;</span>Subject:
+                    <input type="email" name="email" required>
+                  </label>
+                </fieldset>
+                
+                <div class="sm-12">
+                  <label>
+                  Our Location:
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7701.806992191133!2d31.996231965855987!3d46.96169048910305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c5cbdecaabf5eb%3A0xbdc2e040d0cfbf62!2z0LLRg9C70LjRhtGPINCh0LDQtNC-0LLQsCwg0JzQuNC60L7Qu9Cw0ZfQsiwg0JzQuNC60L7Qu9Cw0ZfQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGM!5e0!3m2!1sru!2sua!4v1473446548293"></iframe>
+                  </label>
+                </div>
+              </div>
+              
+              <label>
+                <span class="warn">*&nbsp;</span> Your Message:
+                <textarea name="comments"></textarea>
+              </label>
+              <span><span class="warn">*&nbsp;</span>These are required fields</span>
+            
+              <input class="btn-link btn-send " type="submit" name="submit" value="Send Message">
+            </form> <!-- send-contact -->
+          </div> <!-- end content__contact -->
           
           <!-- content__sidebar -->  
-          
+
           <aside class="content__sidebar xs-24 sm-7 ">
-            <div class="welcome">
-              <h3>Welcome Guest!</h3>
-              <div class="welcome__text">
-                <img class="img-resp frame" src="img/sidebar-blog-main.png" title="Cross-Browser" alt="Cross-Browser" width="222" height="98">
-                <p>Lorem ipsum dolor sit amet, consec&shy;tetur adipiscing elit. Nullam et risus non arcu porttitor feugi at in at neque. In hac habitasse platea dictumst. Proin pretium.</p>
+            
+            <!-- sidebar-nav -->
+            <div class="sidebar-info">
+              <h3>Get In Touch</h3>
+              <div class="sidebar-info__text">
+                <p>Lorem ipsum dolor sit amet, consec
+                  tetur adipiscing elit. Nullam et risus 
+                  non arcu porttitor feugi at in at ne.
+                </p>
+              </div>
+              <div class="numbers">
+                <ul>
+                  <li><a class="phone" href="tel:7777777777"><span>phone</span><br>1+ (123) 4564789</a></li>
+                  <li><a class="email"  href="mailto:youremailaddress"><span>email</span><br>hello@yourdomain.com</a></li>
+                  <li><a class="skype" href="skype:skypename?chat"><span>skype</span><br>yourskypename</a></li>
+                </ul>
               </div>
             </div>
             
-            <!-- sidebar-nav -->
             <div class="sidebar-nav">
               <h3>Site Navigation</h3>
               <div class="accordion-box">
@@ -182,27 +195,7 @@
                 </div>
               </div>
             </div> <!-- end sidebar-nav -->
-            
-            <div class="sidebar-categ">
-              <h3>Categories</h3>
-              <ul>
-                <li><a href="#">Photography</a><span>&nbsp;(12)</span></li>
-                <li><a href="#">Our Portfolio</a><span>&nbsp;(98)</span></li>
-                <li><a href="#">Graphic Design</a><span>&nbsp;(234)</span></li>
-                <li><a href="#">Web Designs</a><span>&nbsp;(4)</span></li>
-                <li><a href="#">Web Developmen</a><span>&nbsp;(3)</span></li>
-                <li><a href="#">Iconography</a><span>&nbsp;(16)</span></li>
-              </ul>
-            </div>
-            
-            <div class="sidebar-blog">
-              <h3>Blog Archives</h3>
-              <ul>
-                <li><a href="#">April 2010</a><span>&nbsp;(98)</span></li>
-                <li><a href="#">February 2010</a><span>&nbsp;(2)</span></li>
-              </ul>
-            </div>
-            
+        
             <div class="sidebar-social ">
               <h3>Network Connect</h3>
               <div class="social cont-inline">

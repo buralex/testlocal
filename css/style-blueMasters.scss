@@ -4,10 +4,10 @@
  
 ----------------------------------------------------------------------------- */
 @font-face {
-	font-family: 'nevis Bold';
-	src: url('../fonts/nevis_bold/nevis_bold.eot');
-	src: url('../fonts/nevis_bold/nevis_bold.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/nevis_bold/nevis_bold.ttf') format('truetype');
+	font-family: "nevis Bold";
+	src: url("../fonts/nevis_bold/nevis_bold.eot");
+	src: url("../fonts/nevis_bold/nevis_bold.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/nevis_bold/nevis_bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }
@@ -32,9 +32,9 @@
   
 ----------------------------------------------------------------------------- */
 
-$font-small: 1.1rem 'Verdana', sans-serif;
-$font-main-nav: bold 1.8rem 'Arial', sans-serif;
-$font-content: 'Arial', sans-serif;
+$font-small: 1.1rem "Verdana", sans-serif;
+$font-main-nav: bold 1.8rem "Arial", sans-serif;
+$font-content: "Arial", sans-serif;
 $font-main-nav__color: #7a8090;
 $font-small__color: #6a87a3;
 $font-footer__color: #6a7796;
@@ -225,7 +225,7 @@ html {
 
 .clearfix {
   &::before, &::after {
-    content: ' ';
+    content: " ";
     display: table;
     clear: both;
   }
@@ -552,7 +552,7 @@ h4 {
 .btn-link, .btn-gallery, .btn-gallery-plus {
   display: inline-block;
   background-color: #11719f;
-  padding: 14px 12px 14px 12px;
+  padding: 12px 12px 12px 12px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -596,9 +596,11 @@ h4 {
   &.active {
     background-color: #11719f;
   }
-  
 }
 
+.btn-send {
+  border: none;
+}
 
 /* -----------------------------------------------------------------------------
 
@@ -640,7 +642,7 @@ h4 {
     background-image: -webkit-linear-gradient(bottom, rgb(46,56,80) , rgb(74,85,109));
     
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 10px;
@@ -706,10 +708,25 @@ h4 {
   }
 }
 
-.index-contact  .numbers {
+.index-contact .numbers {
   background: rgba(24, 27, 36, 0.6);
   margin-bottom: 10px;
   padding: 25px 25px 31px 25px;
+}
+
+.sidebar-info .numbers {
+  padding: 0 20px 20px 20px;
+  
+  a {
+    color: #444955;
+  }
+  span {
+    color: #444d68;
+  }
+}
+
+.numbers{
+  
   ul {
     margin: 0;
     padding: 0;
@@ -729,7 +746,7 @@ h4 {
     text-decoration: none;
     text-transform: none;
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 1px;
@@ -744,22 +761,22 @@ h4 {
     color: lighten( $font-footer__color, 20% );  
   }
   
-  li:nth-of-type(1) a {
+  .phone {
     &::before {
       background-position: -42px -37px;
     }
   }
-  li:nth-of-type(2) a {
+  .email {
     &::before {
       background-position: -42px 0px;
     }
   }
-  li:nth-of-type(3) a {
+  .skype {
     &::before {
       background-position: -79px -37px;
     }
   }
-  li:last-child a {
+  .other {
     margin-bottom: 0 ;
     &::before {
       background-position: -79px -37px;
@@ -818,7 +835,9 @@ h4 {
                  CONTENT-ABOUT
   
 ----------------------------------------------------------------------------- */
-.content__about, .content__blog {
+.content__about, 
+.content__blog, 
+.content__contact {
   padding: 20px ;
   background: #fff;
   color: #444955;
@@ -831,7 +850,7 @@ h4 {
     margin: 0;
     
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 2px;
@@ -849,12 +868,12 @@ h4 {
 .content__about, .content__blog, .content__contact {
   h2 {
     border-bottom: 1px dotted #84a1af;
+    margin-bottom: 20px;
   }
   
   img.frame {
       border: 4px solid #eef0f5;
       box-shadow:  0 0 0 1px #ced1da;
-      margin-top: 21px;
   }
   p {
     text-align: justify;
@@ -890,7 +909,7 @@ h4 {
     color: #fff;
     
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 13px;
@@ -903,26 +922,28 @@ h4 {
     }
   }
 }
-.content__sidebar.fixed {
-  position: fixed;
-  top: 0;
-  left: auto;
-  z-index: 10;
-}
 
 .welcome {
   h3::before{
     background-position: -4px 0;
   }
-  .welcome__text {
-    overflow: hidden;
-    font: 1.2rem/1.4 Verdana, Helvetica, sans-serif;
-    color: #444955;
-    padding: 20px;
-    max-height: 500px;
-  }
 }
 
+.welcome__text, .sidebar-info__text {
+  font: 1.2rem/1.4 Verdana, Helvetica, sans-serif;
+  color: #444955;
+  padding: 20px;
+}
+
+.sidebar-info {
+  h3::before{
+    background-position: -4px -92px;
+  }
+  
+  .sidebar-info__text {
+    
+  }
+}
 
 /*------------------- accordion ---------------------------*/
 .accordion-box {
@@ -965,7 +986,7 @@ button.accordion.active, button.accordion:hover {
 }
 
 button.accordion::after {
-  content: '';
+  content: "";
   float: right;
   margin: 4px 0 4px 0;
   width: 0;
@@ -1078,7 +1099,7 @@ div.panel.show {
     margin: 0;
     
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 2px;
@@ -1133,7 +1154,8 @@ div.panel.show {
   }
 }
 
-.portfolio-pagination {
+.portfolio-pagination, 
+.blog-pagination {
   padding: 10px;
   background-color: #eef0f5;
   border: 1px solid #ced1da;
@@ -1161,10 +1183,92 @@ div.panel.show {
   }
 }
 
+.content__blog section {
+  border-bottom: 1px dotted #84a1af;
+  padding:0 0 20px 0;
+  
+  h1 {
+    color:#1c8cb5;
+    margin: 0 0 0 0;
+  }
+  .posted {
+    text-indent: 0;
+    margin: 0 0 18px 0;
+    font: 1.1rem/1.5 Verdana, Helvetica, sans-serif;
+  }
+  .tags {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .posted a, 
+  .tags a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1b8bb4;
+  }
+}
+
 
 /* -----------------------------------------------------------------------------
 
-             FOOTER        (styles for sticky footer  are in 'root elements')
+                 CONTENT-CONTACT
+  
+----------------------------------------------------------------------------- */
+
+.content__contact {
+  
+  h2::before {
+    background-position: -5px -25px;
+  }
+}
+
+.send-contact {
+  
+  .personal-info {
+    border: none;
+    margin: 0;
+    padding: 0 20px 0 0;
+  }
+  
+  .map {
+    width: 100%;
+    margin: 7px 0 0 0;
+    padding: 5px;
+    border: 1px solid #ced1da;
+  }
+  
+  input:not([type="submit"]), textarea {
+    width: 100%;
+    display: block;
+    margin: 7px 0 11px 0;
+    padding: 10px;
+    height: 42px;
+    border: 1px solid #ced1da;
+    background-color: #eef0f5;
+    font: 1.6rem/1.4 Verdana, Helvetica, sans-serif;
+  }
+  
+  input[type="submit"] {
+    float: right;
+  }
+  
+  textarea {
+    min-height: 275px;
+  }
+  
+  label {
+    font: bold 1.2rem/1.4 Verdana, Helvetica, sans-serif;
+  }
+  .warn {
+    color: #f86756;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+
+             FOOTER        (styles for sticky footer  are in "root elements")
   
 ----------------------------------------------------------------------------- */
 
@@ -1238,7 +1342,7 @@ div.panel.show {
   position: relative;
   
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 100%;
@@ -1250,7 +1354,7 @@ div.panel.show {
     border-color: transparent transparent rgba(117, 136, 187, 0.102) transparent;
   }
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 100%;

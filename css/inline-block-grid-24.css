@@ -57,6 +57,7 @@
   font-family: "zero-width";
   font-size: 0;
 }
+
 .clmn-inline {
   vertical-align: top;
   font-family: sans-serif;
@@ -1723,6 +1724,20 @@
 }
 .text-capitalize {
   text-transform: capitalize;
+}
+
+/*---------------------- vertical alignment ---------------------------*/
+.vert-top {
+  vertical-align: top;
+}
+.vert-mid {
+  vertical-align: middle;
+}
+.vert-base {
+  vertical-align: baseline;
+}
+.vert-bottom {
+  vertical-align: bottom;
 }
 
 /*-------------------- Responsive utilities (media for mobile development) -------------------*/
