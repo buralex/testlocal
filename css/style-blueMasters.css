@@ -46,13 +46,14 @@
     border: 5px solid #fff !important; }
 
   /*------------------------- PORTFOLIO-media -------------------------------*/
-  ul.portfolio-pages {
+  ul.portfolio-pages, ul.blog-pages {
     margin: 10px; }
-    ul.portfolio-pages a {
+    ul.portfolio-pages a, ul.blog-pages a {
       padding: 10px; }
 
-  .portfolio-pagination div {
+  .portfolio-pagination div, .blog-pagination div {
     text-align: center; } }
+/*------------------------- BLOG-media -------------------------------*/
 @media (max-width: 767px) {
   .content__portfolio div:first-child, .content__portfolio div:first-child + div {
     text-align: center; }
@@ -584,6 +585,11 @@ h4 {
                  CONTENT-ABOUT
   
 ----------------------------------------------------------------------------- */
+.content__about-wrap,
+.content__blog-wrap,
+.content__contact-wrap {
+  background-color: #fff; }
+
 .content__about,
 .content__blog,
 .content__contact {
@@ -632,6 +638,9 @@ h4 {
   font-style: italic; }
 
 /*----------------------- sidebar -----------------------*/
+.content__sidebar-wrap {
+  background-color: #eef0f5; }
+
 .content__sidebar {
   background: #eef0f5;
   background-clip: content-box; }
@@ -761,6 +770,12 @@ div.panel.show {
 .sidebar-categ li,
 .sidebar-blog li {
   font: bold 1.4rem/1.8 Verdana, Helvetica, sans-serif; }
+  .sidebar-categ li a,
+  .sidebar-blog li a {
+    text-decoration: none; }
+  .sidebar-categ li a:hover,
+  .sidebar-blog li a:hover {
+    text-decoration: underline; }
 .sidebar-categ span,
 .sidebar-blog span {
   float: right;
@@ -831,9 +846,9 @@ div.panel.show {
   background-color: #eef0f5;
   border: 1px solid #ced1da; }
 
-.portfolio-pages li {
+.portfolio-pages li, .blog-pages li {
   display: inline-block; }
-  .portfolio-pages li:not(:last-of-type) {
+  .portfolio-pages li:not(:last-of-type), .blog-pages li:not(:last-of-type) {
     margin-right: 5px; }
 
 /* -----------------------------------------------------------------------------
@@ -882,7 +897,7 @@ div.panel.show {
   border: 1px solid #ced1da; }
 .send-contact input:not([type="submit"]), .send-contact textarea {
   width: 100%;
-  display: block;
+  display: inline-block;
   margin: 7px 0 11px 0;
   padding: 10px;
   height: 42px;

@@ -1,3 +1,14 @@
+<?php
+if (isset($_REQUEST['ok'])) {
+     $string = '<p>'.'<span>'.$_REQUEST['username'].'</span>'.'<br>'.$_REQUEST['msg'].'</p>';
+    file_put_contents('1.txt',"$string \n", FILE_APPEND);
+    //$f = fopen("1.txt", "a+");
+    //fputs($f, "$string \n");
+    //fclose($f);
+    header("Location: blog1.php#comment-blog");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -188,23 +199,16 @@
               </div>
             </div> <!-- end blog-pagination -->
             
-            <div class="comment">
-              <?php
-if (isset($_REQUEST['ok'])) {
- 
-    $string = '<p>'.$_REQUEST['username'].'<br>'.$_REQUEST['msg'];
-    file_put_contents('1.txt', $string, FILE_APPEND);
-    header("Location: /test.php");
-    exit();
-}
-include ('1.txt');
-?>
-<form action="" method="post">
-<input name="username">
-<br><textarea name="msg" rows="10"></textarea>
-<br><br>
-<input type="submit" name="ok" value="Отправить" >
-</form>
+            <div id="comment-blog" class="comment">
+              <?php 
+                include ('1.txt');
+              ?>
+              <form action="<?=$_SERVER["PHP_SELF"]?>" method="post">
+                <input name="username">
+                <br><textarea name="msg" rows="10"></textarea>
+                <br><br>
+                <input type="submit" name="ok" value="Отправить" >
+              </form>
             </div>
 
           </div> <!-- end content__blog -->

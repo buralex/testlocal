@@ -76,7 +76,7 @@ $main-container-width: 980px;
 
   /*------------------------- PORTFOLIO-media -------------------------------*/
 
-  ul.portfolio-pages {
+  ul.portfolio-pages, ul.blog-pages {
     margin: 10px;
     
     a {
@@ -84,11 +84,14 @@ $main-container-width: 980px;
     }
   }
   
-  .portfolio-pagination div {
+  .portfolio-pagination div, .blog-pagination div {
     text-align: center;
   }
 
 }
+
+/*------------------------- BLOG-media -------------------------------*/
+
 
 
 // Small devices (landscape phones, 544px and up)
@@ -835,6 +838,13 @@ h4 {
                  CONTENT-ABOUT
   
 ----------------------------------------------------------------------------- */
+
+.content__about-wrap, 
+.content__blog-wrap, 
+.content__contact-wrap {
+  background-color: #fff;
+}
+
 .content__about, 
 .content__blog, 
 .content__contact {
@@ -893,6 +903,10 @@ h4 {
 
 
 /*----------------------- sidebar -----------------------*/
+
+.content__sidebar-wrap {
+  background-color: #eef0f5;
+}
 
 .content__sidebar {
   background: #eef0f5;
@@ -1069,6 +1083,13 @@ div.panel.show {
   }
   li {
     font: bold 1.4rem/1.8 Verdana, Helvetica, sans-serif;;
+    
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
   span {
     float: right;
@@ -1161,7 +1182,7 @@ div.panel.show {
   border: 1px solid #ced1da;
 }
 
-.portfolio-pages li {
+.portfolio-pages li, .blog-pages li {
   display: inline-block; 
   
   &:not(:last-of-type) {
@@ -1240,7 +1261,7 @@ div.panel.show {
   
   input:not([type="submit"]), textarea {
     width: 100%;
-    display: block;
+    display: inline-block;
     margin: 7px 0 11px 0;
     padding: 10px;
     height: 42px;
