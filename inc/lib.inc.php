@@ -1,34 +1,96 @@
 <?php 
 
- /*-------------- menu --------------------*/
- function drawMenu($menu, $vertical=true) {
-    $style="";
-    if (!$vertical) {
-        $style= " style='display: inline-block; margin-right: 15px;' ";
-    }
-    echo "<ul>";
-        foreach ( $menu as $item ) {
-          echo "<li$style><a href = '{$item['href']}'>{$item['link']}</a></li>";
-        }
-    echo "</ul>";
-  }
- 
+ //adding  fileName and thumbPath to table
+    function addItemToTable($fileName, $thumbName) {
+        
+        $sql = 'INSERT INTO portfolio (fileName, thumbName) VALUES (?, ?)';
+        
+        if (!$stmt = DBConnection::$conn->prepare($sql)) return false;
+        
+	    $stmt->bind_param("ss", $fileName, $thumbName);
+	    
+        $stmt->execute();
 
-  function drawTable($cols, $rows, $color){
-    echo "<table border='1' style='width: 300px;'>\n";
+        echo "New records created successfully";
+
+        //$stmt->close();
+        //DBConnection::$conn->close();
+        //return true;
+    }
+    
+    function selectAllItems(){
+        
+        $sql = 'SELECT id, fileName, thumbName, photoName, photoCaption FROM portfolio';
+        if (!$result = DBConnection::$conn->query($sql)) return false;
+        
+        $items = mysqli_fetch_all($result, MYSQLI_ASSOC); 
+        mysqli_free_result($result);
+        return $items;
+    }
+    
+    function select16Items($numPage){
+        
+        if ($numPage){
+            $limit = $numPage * 16 - 16;
+        } else {
+            $limit = 0;
+        }
+        
+        //echo $limit;
+        $sql = "SELECT id, fileName, thumbName, photoName, photoCaption FROM portfolio LIMIT $limit, 16";
+        if (!$result = DBConnection::$conn->query($sql)) return false;
+        
+        $items = mysqli_fetch_all($result, MYSQLI_ASSOC); 
+        mysqli_free_result($result);
+        return $items;
+    }
+    
+    	$amountPagesGlobal = 0;
+    
+    function portfolioPaginaton($numPage){
+        $photoAmount = 0;
+        $thumbsArr = new DirectoryIterator("img/portfolio/thumbs");
+
+
+        foreach ($thumbsArr as $finfo) {
+        	if (!$finfo->isDot() && !$finfo->isDir()) {
+        	    $photoAmount++;
+    	    }
+        }
       
-       for ( $j=1 ; $j<= $rows; $j++){
-         echo "\t<tr>\n";
-            for( $i=1 ; $i<= $cols; $i++){
-              if($j==1 || $i==1) {
-                echo "\t\t<th style='background: $color; text-align: center;'>" . $i * $j . "</th>\n";
-              } else {
-                echo "\t\t<td>" . $i * $j . "</td>\n";
-              }
-            }
-         echo "\t</tr>\n";
-       }
-       
-    echo "</table>";
-  }
+      
+        $amountPages = ceil($photoAmount / 16) ;
+        $GLOBALS['amountPagesGlobal'] = $amountPages;
+        
+        for ($a = 1; $a <= $amountPages; $a++){
+            
+            $class = ($numPage == $a) ? "active" : "" ;
+            
+            echo <<<EOT
+            <li><a class="btn-link btn-pagination $class" href="index.php?id=portfolio&num=$a" >$a</a></li>
+EOT;
+        }
+    }
+    
+    function prevPage($numPage){
+        if ($numPage <= 1){
+            $numPage = "1" ;
+        } else{
+            $numPage--;
+        }
+        
+        echo $numPage;
+    }
+    
+    function nextPage($numPage){
+        $am = $GLOBALS['amountPagesGlobal'];
+        
+        if ($numPage >= $am){
+            $numPage = "$am" ;
+        } else{
+            $numPage++;
+        }
+        
+        echo $numPage;
+    }
 ?>
