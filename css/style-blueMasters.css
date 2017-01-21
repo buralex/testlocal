@@ -151,7 +151,7 @@ html {
 
 body {
   background: #1e222b;
-  background: url(../img/bgPat.png), -webkit-linear-gradient(top, #1e222b, #333949) fixed;
+  background: url(../img/bgPat.png), -webkit-linear-gradient(top, #303645, #333949) fixed;
   background: url(../img/bgPat.png), linear-gradient(to bottom, #303645, #333949) fixed; }
 
 .main-container {
