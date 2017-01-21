@@ -14,7 +14,7 @@
     
     
 
-    <!-- frameworks -->
+    <!-- FRAMEWORKS -->
     
     <!-- inline-block Grid, modified from bootstrap -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -34,9 +34,10 @@
     
   </head>
   <body>
+    <!-- WRAPPER -->
     <div class="wrapper">
       
-      <!--  main-header -->
+      <!-- MAIN-HEADER -->
       <header class="main-header">
         <div class="main-container cont-fluid">
           
@@ -61,11 +62,12 @@
           </div>
           
         </div>
-      </header> <!-- end main-header -->
+      </header> 
+      <!-- END MAIN-HEADER -->
       
       <div class="strip"></div>
       
-      <!-- end logo and nav -->
+      <!-- LOGO AND NAV -->
       <div class="cont-fluid main-container">
         
         <div class="sm-8">
@@ -73,12 +75,13 @@
           <button type=button class="drop-btn__nav">Menu</button>
         </div> 
   
-        <!-- main-nav -->
+        <!-- MAIN-NAV -->
         <?php
           require_once "inc/menu.inc.php";
         ?>
-        <!-- end main-nav -->
-      </div> <!-- end logo and nav -->
+        <!-- END MAIN-NAV -->
+      </div> 
+      <!-- END LOGO AND NAV -->
       
       <?php 
           switch($id){
@@ -101,13 +104,14 @@
        
       <div class="content-bottom"></div>
 
-    </div> <!-- end wrapper -->
+    </div> 
+    <!-- END WRAPPER -->
     
-    <!-- footer-container -->
+    <!-- FOOTER-CONTAINER -->
     <?php
-        require_once "inc/bottom.inc.php";
+      require_once "inc/bottom.inc.php";
     ?>
-    <!-- end footer-container -->
+    <!-- END FOOTER-CONTAINER -->
     
   
   

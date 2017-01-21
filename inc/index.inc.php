@@ -1,6 +1,6 @@
 <div class="main-container">
         
-  <!-- slider-box -->
+  <!-- SLIDER-BOX -->
   <section class="slider-box">
     <div class="flexslider">
       <ul class="slides">
@@ -40,13 +40,14 @@
       <button class="flex-next">&#62;</button>
       
     </div>
-  </section> <!-- end slider-box --> 
+  </section> 
+  <!-- END SLIDER-BOX --> 
 </div>
     
 <div class="controls main-container"></div> <!-- for controls of slider -->
       
 <div class="main-container">
-  <!-- content -->
+  <!-- CONTENT -->
   <div class="content cont-fluid text-center">
     <div class="row-index">
       <section class="index-about ssm-12 sm-12 md-8 text-left ">
@@ -94,5 +95,6 @@
         </div>
       </section>  
     </div>
-  </div>  <!-- end content -->
+  </div>  
+  <!-- END CONTENT -->
 </div>

@@ -8,11 +8,12 @@ require "form.php";
       <div class="content-top"></div>
       
       <div class="main-container ">
-        <!-- content -->
+        <!-- CONTENT -->
         <div class="content cont-fluid">
           
-          <!-- content__contact -->
+          
           <div class="xs-24 sm-17 content__contact-wrap equal">
+            <!-- CONTENT-CONTACT-->
             <div class="content__contact clearfix">
               <h2>Contact Us</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum vehicula nisi ac vehic
@@ -21,7 +22,7 @@ require "form.php";
                 ipsum nunc et augue. Nulla sapien enim, rutrum sed pretium at, euismod sed augue. Vestibul
                 um quis nibh nisl, facilisis adipiscing massa. Aliquam erat volutpat.
               </p>
-              <!-- send-contact -->
+              <!-- SEND-CONTACT -->
               <form class="send-contact" action="form.php" method="post">
                 <div class="cont-fluid">
                   <fieldset class="personal-info sm-12">
@@ -56,15 +57,17 @@ require "form.php";
                 <span><span class="warn">*&nbsp;</span>These are required fields</span>
               
                 <input class="btn-link btn-send " type="submit" name="submit" value="Send Message">
-              </form> <!-- send-contact -->
-            </div> <!-- end content__contact -->
+              </form> 
+              <!-- SEND-CONTACT -->
+            </div> 
+            <!--END CONTENT-CONTACT -->
           </div>
           
-          <!-- content__sidebar -->  
+          <!-- CONTENT-SIDEBAR-WRAP -->  
           <div class="xs-24 sm-7 content__sidebar-wrap equal">
+            <!-- CONTENT-SIDEBAR-WRAP -->
             <aside class="content__sidebar ">
-              
-              <!-- sidebar-nav -->
+              <!-- SIDEBAR-INFO -->
               <div class="sidebar-info">
                 <h3>Get In Touch</h3>
                 <div class="sidebar-info__text">
@@ -81,11 +84,12 @@ require "form.php";
                   </ul>
                 </div>
               </div>
-              
+              <!-- END SIDEBAR-INFO -->
+              <!-- SIDEBAR-NAV -->
                 <?php
                   require_once "inc/sidebar.inc.php";
                 ?>
-              <!-- end sidebar-nav -->
+              <!-- END SIDEBAR-NAV -->
           
               <div class="sidebar-social ">
                 <h3>Network Connect</h3>
@@ -99,11 +103,11 @@ require "form.php";
                 </div>
               </div>
               
-            </aside> <!-- end content__sidebar -->
-          </div> <!-- end content__sidebar-wrap -->
-        </div> <!-- end content -->
+            </aside>
+            <!-- END CONTENT-SIDEBAR -->
+          </div> 
+          <!-- END CONTENT-SIDEBAR-WRAP -->
+        </div>
+        <!-- END CONTENT -->
       </div>
-       
-      <div class="content-bottom"></div>
 
-    </div> <!-- end wrapper -->

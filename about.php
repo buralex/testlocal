@@ -1,8 +1,8 @@
 <div class="main-container ">
-  <!-- content -->
+  <!-- CONTENT -->
   <div class="content cont-fluid">
     
-    <!-- content__about -->
+    <!-- CONTENT-ABOUT -->
     <div class="xs-24 sm-17 content__about-wrap equal">
       <div class="content__about ">
         <h2>About</h2>
@@ -45,11 +45,13 @@
           adipiscing elit. Nullam et risus non arcu porttitor feugi.
         </p>
 
-      </div> <!-- end content__about -->
+      </div> 
+      <!-- END CONTENT-ABOUT -->
     </div>
     
-    <!-- content__sidebar -->  
+    <!-- CONTENT-SIDEBAR-WRAP -->  
     <div class="content__sidebar-wrap xs-24 sm-7 equal">
+      <!-- CONTENT-SIDEBAR -->
       <aside class="content__sidebar">
         <div class="welcome">
           <h3>Welcome Guest!</h3>
@@ -59,11 +61,11 @@
           </div>
         </div>
         
-        <!-- sidebar-nav -->
+        <!-- SIDEBAR-NAV -->
           <?php
             require_once "inc/sidebar.inc.php";
           ?>
-        <!-- end sidebar-nav -->
+        <!--END SIDEBAR-NAV -->
         
         <div class="sidebar-categ">
           <h3>Categories</h3>
@@ -97,7 +99,10 @@
           </div>
         </div>
         
-      </aside> <!-- end content__sidebar -->
-    </div> <!-- end content__sidebar-wrap -->
-  </div> <!-- end content -->
+      </aside> 
+      <!-- END CONTENT-SIDEBAR -->
+    </div> 
+    <!-- END CONTENT-SIDEBAR-WRAP -->
+  </div> 
+  <!-- END CONTENT -->
 </div>

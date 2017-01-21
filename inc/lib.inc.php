@@ -1,5 +1,6 @@
 <?php 
 
+/*------------ FUNCTIONS FOR PORTFOLIO ----------*/
  //adding  fileName and thumbPath to table
     function addItemToTable($fileName, $thumbName) {
         
@@ -93,4 +94,5 @@ EOT;
         
         echo $numPage;
     }
-?>
+
+/*------------  END FUNCTIONS FOR PORTFOLIO ----------*/

@@ -3,10 +3,10 @@
       <div class="content-top"></div>
       
       <div class="main-container ">
-        <!-- content -->
+        <!-- CONTENT -->
         <div class="content cont-fluid">
           
-          <!-- content__blog -->
+          <!-- CONTENT-BLOG -->
           <div class="xs-24 sm-17 content__blog-wrap equal">
             <div class="content__blog">
               <h2>Blog</h2>
@@ -79,6 +79,7 @@
                 </div>
               </section>
               
+              <!-- BLOG-PAGINATION -->
               <div class="blog-pagination cont-fluid">
                 <div class="ssm-6">
                   <a href="#" class="btn-link btn-pagination">&laquo;&nbsp;Previous Page</a>
@@ -93,13 +94,16 @@
                 <div class="ssm-6 text-right">
                   <a href="#" class="btn-link btn-pagination">Next Page&nbsp;&raquo;</a> 
                 </div>
-              </div> <!-- end blog-pagination -->
+              </div> 
+              <!-- END BLOG-PAGINATION -->
               
-            </div> <!-- end content__blog -->
+            </div>
+            <!-- END CONTENT-BLOG -->
           </div>
           
-          <!-- content__sidebar -->  
+          <!-- CONTENT-SIDEBAR-WRAP -->  
           <div class="xs-24 sm-7 content__sidebar-wrap equal">
+            <!-- CONTENT-SIDEBAR-WRAP -->
             <aside class="content__sidebar  ">
               <div class="welcome">
                 <h3>Welcome Guest!</h3>
@@ -109,11 +113,11 @@
                 </div>
               </div>
               
-              <!-- sidebar-nav -->
+              <!-- SIDEBAR-NAV -->
                 <?php
                   require_once "inc/sidebar.inc.php";
                 ?>
-              <!-- end sidebar-nav -->
+              <!-- END SIDEBAR-NAV -->
               
               <div class="sidebar-categ">
                 <h3>Categories</h3>
@@ -147,12 +151,11 @@
                 </div>
               </div>
               
-            </aside> <!-- end content__sidebar -->
-          </div> <!-- end content__sidebar-wrap -->
-        </div> <!-- end content -->
+            </aside> 
+            <!-- END CONTENT-SIDEBAR -->
+          </div> 
+          <!-- END CONTENT-SIDEBAR-WRAP -->
+        </div> 
+        <!-- END CONTENT -->
       </div>
-       
-      <div class="content-bottom"></div>
-
-    </div> <!-- end wrapper -->
  

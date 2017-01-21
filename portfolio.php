@@ -9,11 +9,10 @@
   
 	
       <div class="main-container ">
-        <!-- content -->
+        <!-- CONTENT -->
         <div class="content cont-fluid">
           
-          <!-- content__portfolio -->
-          
+          <!-- CONTENT-PORTFOLIO -->
           <div class="content__portfolio xs-24 ">
             <div class="cont-fluid">
               <div class="sm-10 ">
@@ -24,21 +23,20 @@
                 <a href="#" class="btn-gallery-plus">+</a>
               </div>
               
+              <!--PORTFOLIO-GALLERY-->
               <div  class="portfolio-gallery ">
-                
                 <div class="row-portfolio">
                   <ul id="lightgallery" class="">
-                  <?php 
-                  
-                  include 'getPhotoPage.php';
-                  
-                  ?>
-       
+                    <?php 
+                      include 'getPhotoPage.php';
+                    ?>
                   </ul>
-                </div> <!-- row-portfolio -->
-              </div> <!-- end portfolio-gallery -->
-            </div> <!-- end portfolio-gallery -->
+                </div> 
+              </div>
+              <!-- END PORTFOLIO-GALLERY -->
+            </div> 
             
+            <!-- PORTFOILO-PAGINATION -->
             <div class="portfolio-pagination cont-fluid">
               <div class="ssm-6">
                 <a href="index.php?id=portfolio&num=<?php prevPage($num) ?>" class="btn-link btn-pagination">&laquo;&nbsp;Previous Page</a>
@@ -51,19 +49,10 @@
               <div class="ssm-6 text-right">
                 <a href="index.php?id=portfolio&num=<?php nextPage($num); ?>" class="btn-link btn-pagination">Next Page&nbsp;&raquo;</a> 
               </div>
-            </div> <!-- end portfolio-pagination -->
-            
-            
-
-          </div> <!-- end content__portfolio -->
-          
-        </div> <!-- end content -->
+            </div> 
+            <!-- END PORTFOILO-PAGINATION -->
+          </div> 
+          <!-- END CONTENT-PORTFOLIO -->
+        </div> 
+        <!--END CONTENT -->
       </div>
-       
-      <div class="content-bottom"></div>
-
-    </div> <!-- end wrapper -->
-    
-
-
-      
