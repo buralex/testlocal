@@ -62,7 +62,7 @@
           <li><a href="#">Log in</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span></li>
           <li><a href="#">Privacy Policy</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span></li>
           <li><a href="#">Terms and Conditions</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span></li>
-          <li><a href="../contact.php">Contact Us</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span></li>
+          <li><a href="?id=contact">Contact Us</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span></li>
           <li><a href="#">Back to Top</a></li>
         </ul>
       </div>

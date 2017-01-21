@@ -82,32 +82,10 @@ require "form.php";
                 </div>
               </div>
               
-              <div class="sidebar-nav">
-                <h3>Site Navigation</h3>
-                <div class="accordion-box">
-                  <button class="accordion">Welcome Home</button>
-                  <div class="panel">
-                    <a href="index.html">Home</a>
-                  </div>
-                  <button class="accordion">About Us</button>
-                  <div class="panel">
-                    <a href="about.html">About 1</a>
-                    <a href="about.html">About 2</a>
-                  </div>
-                  <button class="accordion">Our Portfolio</button>
-                  <div class="panel">
-                    <a href="portfolio.html">Portfolio</a>
-                  </div>
-                  <button class="accordion">Blog News</button>
-                  <div class="panel">
-                    <a href="blog.html">Blog</a>
-                  </div>
-                  <button class="accordion">Contact Us</button>
-                  <div class="panel">
-                    <a href="contact.html">Contact Us</a>
-                  </div>
-                </div>
-              </div> <!-- end sidebar-nav -->
+                <?php
+                  require_once "inc/sidebar.inc.php";
+                ?>
+              <!-- end sidebar-nav -->
           
               <div class="sidebar-social ">
                 <h3>Network Connect</h3>
